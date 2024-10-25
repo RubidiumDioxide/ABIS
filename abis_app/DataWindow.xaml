@@ -1,0 +1,15 @@
+﻿<Window x:Class="abis_app.DataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abis_app"
+        mc:Ignorable="d"
+        Title="DataWindow" Height="450" Width="800" Background="Lime">
+
+    <StackPanel>
+        <DataGrid x:Name="Book_Table" AutoGenerateColumns="True" ItemsSource="{Binding}">
+        </DataGrid>
+        <Button x:Name="Add_Book_Button" Content="Добавить книгу" Width="80" Height="25" Background="CadetBlue" Click="Add_Book_Button_Click"/>
+    </StackPanel>
+</Window>
