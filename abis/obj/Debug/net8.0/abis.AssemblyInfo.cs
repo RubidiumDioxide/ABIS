@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("abis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f674cc04ea9095566230ba782e2a0d56214f2434")]
 [assembly: System.Reflection.AssemblyProductAttribute("abis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("abis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

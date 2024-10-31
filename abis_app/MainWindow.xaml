@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
         Title="ABIS" Height="450" Width="800" Background="Azure">
-    
+
+    <Window.Resources>
+    </Window.Resources>
+  
     <StackPanel>
-            <Button x:Name="Book_Button" Content="Книги" Width="80" Height="25" Background="CadetBlue" Click="Book_Button_Click"/>
+        <Button x:Name="Book_Button" Content="Книги" Click="Book_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Reader_Button" Content="Читатели" Click="Reader_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="BookReader_Button" Content="Формуляры" Click="BookReader_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Reports_Button" Content="Отчеты" Click="Reports_Button_Click" Style="{StaticResource Button_Style}"/>
     </StackPanel>
 </Window>

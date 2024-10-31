@@ -26,3 +26,4 @@ C:\Users\User\storage\courses\ввип\folder\abis\obj\Debug\net8.0\refint\abis.
 C:\Users\User\storage\courses\ввип\folder\abis\obj\Debug\net8.0\abis.pdb
 C:\Users\User\storage\courses\ввип\folder\abis\obj\Debug\net8.0\abis.genruntimeconfig.cache
 C:\Users\User\storage\courses\ввип\folder\abis\obj\Debug\net8.0\ref\abis.dll
+C:\Users\User\storage\courses\ввип\folder\abis\obj\Debug\net8.0\abis.sourcelink.json

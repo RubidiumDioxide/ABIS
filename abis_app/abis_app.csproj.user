@@ -7,21 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="DataWindow.xaml.cs">
+    <Compile Update="BookReaderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BookWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="InputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ReaderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ReportsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="DataWindow.xaml">
+    <Page Update="BookReaderWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="InputWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ReaderWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ReportsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

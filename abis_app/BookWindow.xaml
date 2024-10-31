@@ -1,0 +1,44 @@
+﻿<Window x:Class="abis_app.BookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abis_app"
+        mc:Ignorable="d"
+        Title="BookWindow" WindowState="Maximized"  Background="Aquamarine">
+
+    <Window.Resources>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
+             <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource Button_Style}" Click="Add_Book_Button_Click"/>
+             <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource Button_Style}" Click="Delete_Book_Button_Click"/>
+             <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource Button_Style}" Click="Edit_Book_Button_Click"/>
+        </StackPanel>
+        
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlock_Style}">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
+        
+        <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Book_Button_Click"/>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+            <TextBox MaxLength="13" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}">ISBN</TextBox>
+            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}">Название книги</TextBox>
+            <TextBox MaxLength="4" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}">Год</TextBox>
+        </StackPanel>
+        
+        <DataGrid x:Name="Book_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</Window>
