@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+
 /*using System.Linq;
 using System.Text;
 using System.Threading.Tasks;*/
@@ -44,6 +46,11 @@ namespace abis_app
         private void Search_BookReader_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Placeholder", "Performs search & alters the selection shown");
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

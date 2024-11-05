@@ -39,12 +39,10 @@ namespace abis_app
             {
                 bookWindow = new BookWindow();
                 bookWindow.Owner = this;
-                bookWindow.Show();
             }
-            else
-            {
-                bookWindow.Focus();
-            }
+
+            bookWindow.Show();
+            bookWindow.Focus();
         }
 
         private void Reader_Button_Click(object sender, RoutedEventArgs e)
@@ -53,12 +51,10 @@ namespace abis_app
             {
                 readerWindow = new ReaderWindow();
                 readerWindow.Owner = this;
-                readerWindow.Show();
             }
-            else
-            {
-                readerWindow.Focus();
-            }
+
+            readerWindow.Show();
+            readerWindow.Focus();
         }
         
         private void BookReader_Button_Click(object sender, RoutedEventArgs e)
@@ -67,12 +63,10 @@ namespace abis_app
             {
                 bookReaderWindow = new BookReaderWindow();
                 bookReaderWindow.Owner = this;
-                bookReaderWindow.Show();
             }
-            else
-            {
-                bookReaderWindow.Focus();
-            }
+
+            bookReaderWindow.Show();
+            bookReaderWindow.Focus();
         }
 
         private void Reports_Button_Click(object sender, RoutedEventArgs e)
@@ -81,12 +75,15 @@ namespace abis_app
             {
                 reportsWindow = new ReportsWindow();
                 reportsWindow.Owner = this;
-                reportsWindow.Show();
             }
-            else
-            {
-                reportsWindow.Focus();
-            }
+            
+            reportsWindow.Show();
+            reportsWindow.Focus();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }

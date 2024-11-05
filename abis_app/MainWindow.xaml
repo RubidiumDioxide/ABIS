@@ -17,9 +17,9 @@
     </Window.Resources>
 
     <StackPanel>
-        <Button x:Name="Book_Button" Content="Книги" Click="Book_Button_Click" Style="{StaticResource Button_Style}" FontSize="16" FontWeight="Bold" FontStyle="Italic" FontFamily="Bell MT" HorizontalAlignment="Center" Width="300" Foreground="#FF244265"/>
-        <Button x:Name="Reader_Button" Content="Читатели" Click="Reader_Button_Click" Style="{StaticResource Button_Style}" Width="300" FontFamily="Bell MT" FontWeight="Bold" FontStyle="Italic" FontSize="16" Foreground="#FF244265"/>
-        <Button x:Name="BookReader_Button" Content="Формуляры" Click="BookReader_Button_Click" Style="{StaticResource Button_Style}" Width="300" FontFamily="Bell MT" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF244265"/>
-        <Button x:Name="Reports_Button" Content="Отчеты" Click="Reports_Button_Click" Style="{StaticResource Button_Style}" FontFamily="Bell MT" FontSize="16" FontWeight="Bold" FontStyle="Italic" Width="300" Foreground="#FF244265"/>
+        <Button x:Name="Book_Button" Content="Книги" Click="Book_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Reader_Button" Content="Читатели" Click="Reader_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="BookReader_Button" Content="Формуляры" Click="BookReader_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Reports_Button" Content="Отчеты" Click="Reports_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
     </StackPanel>
 </Window>

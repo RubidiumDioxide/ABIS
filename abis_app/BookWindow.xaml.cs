@@ -2,10 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+
 /*using System.Linq;
 using System.Text;
 using System.Threading.Tasks;*/
 using System.Windows;
+using System.Windows.Controls;
 /*using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -21,48 +25,95 @@ namespace abis_app
     /// </summary>
     public partial class BookWindow : Window
     {
+        private InputWindow inputWindow;
+        private bool isInputWindowOpen = false;
+
         public BookWindow()
         {
             InitializeComponent();
-
-            Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity}); 
+            
+            BookTableRefresh(); 
         }
         private void Add_Book_Button_Click(object sender, RoutedEventArgs e)
         {
-            /*InputWindow inputWindow = new InputWindow();
+            inputWindow = new InputWindow("add");
             inputWindow.Owner = this;
-            inputWindow.Show();*/
-
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Inputs data & add a book");
+            inputWindow.inputEntered += new EventHandler(inputWindowEntered);
+            isInputWindowOpen = true;
+            inputWindow.Show();
         }
 
         private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Inputs ISBN & delete a book");
+            if (Book_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = Book_Table.SelectedItem;
+
+                //delete function
+                BookTools.DeleteBook(MainWindow.db, value.Isbn);
+
+                //reset the datagrid
+                this.BookTableRefresh();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
         }
 
         private void Edit_Book_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Inputs ISBN & edit a book");
+            if (Book_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = Book_Table.SelectedItem;
+
+                //edit 
+                inputWindow = new InputWindow(MainWindow.db, "edit", value.Isbn);
+                inputWindow.Owner = this;
+                inputWindow.inputEntered += new EventHandler(inputWindowEntered);
+                isInputWindowOpen = true;
+                inputWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
         }
+
+        void inputWindowEntered(object sender, EventArgs e)
+        {
+            if (inputWindow.type == "add")
+            {
+                BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
+            }
+            if (inputWindow.type == "edit")
+            {
+                BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs); 
+            }
+
+            BookTableRefresh();
+            inputWindow.Close();
+        }
+
 
         private void Search_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Placeholder", "Performs search & alters the selection");
         }
 
-        private void Book_Table_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
         }
 
-
-
-
-        /*private void Book_Table_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        public void BookTableRefresh()
         {
-            Book b = e.Row.Item as Book;
-            MessageBoxResult m = MessageBox.Show($"{b.Isbn}{b.Title}{b.Pages}{b.PublishingHouse}{b.YearPublished}{b.Description}{b.Quantity}");
-        }*/
+            MainWindow.db.Books.Load();
+            this.Book_Table.ItemsSource = null;
+            this.Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity });
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using abis;
 using System;
+using System.ComponentModel;
+
 /*using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +48,11 @@ namespace abis_app
         private void Search_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Placeholder", "Performs search & alters the selection shown");
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

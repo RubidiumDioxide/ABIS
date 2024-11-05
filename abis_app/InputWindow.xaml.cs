@@ -1,6 +1,7 @@
 ﻿using abis;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,12 +21,48 @@ namespace abis_app
     /// </summary>
     public partial class InputWindow : Window
     {
-        AbisContext db = new AbisContext();
-        private List<String> Inputs;
-        public InputWindow()
+        AbisContext db;
+        public List<String> Inputs;
+        public event EventHandler inputEntered;
+        public string type = "";
+        public long isbn = 0000000000000;
+
+        public InputWindow(AbisContext db, string _type, long _isbn)
         {
-            InitializeComponent();
+            type = _type;
+            
+            if (type == "edit")
+            {
+                isbn = _isbn;
+
+                InitializeComponent();
+
+                Book book = db.Books.Where(b => b.Isbn == isbn).FirstOrDefault();
+
+                ISBN_Textbox.Text = book.Isbn.ToString();
+                Title_Textbox.Text = book.Title.ToString();
+                Pages_Textbox.Text = book.Pages.ToString();
+                PublishingHouse_Textbox.Text = book.PublishingHouse.ToString();
+                YearPublished_Textbox.Text = book.YearPublished.ToString();
+                Description_Textbox.Text = book.Description.ToString();
+                Quantity_Textbox.Text = book.Quantity.ToString();
+
+                ISBN_Textbox.IsEnabled = false;
+            }
         }
+
+        public InputWindow(string _type)
+        {
+            type = _type;
+
+            if (type == "add")
+            {
+                InitializeComponent();
+
+                ISBN_Textbox.IsEnabled = true;
+            }
+        }
+
 
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
@@ -39,7 +76,7 @@ namespace abis_app
             }
         }
 
-        private void Input_Button_Click(object sender, RoutedEventArgs e)
+        public void Input_Button_Click(object sender, RoutedEventArgs e)
         {
             Inputs = new List<String>();
             foreach (TextBox t in FindVisualChildren<TextBox>(this))
@@ -47,12 +84,10 @@ namespace abis_app
                 Inputs.Add(t.Text);
             }
 
-            db.Add(new Book { Isbn = long.Parse(Inputs[0]), Title = Inputs[1], Pages = short.Parse(Inputs[2]), PublishingHouse = Inputs[3], YearPublished = short.Parse(Inputs[4]), Description = Inputs[5], Quantity = byte.Parse(Inputs[6]) });
-            db.SaveChanges();
-
-            this.Close();
+            inputEntered?.Invoke(this, EventArgs.Empty);
         }
 
+        //potentially useless, remove later if useless still
         private void ISBN_TextBox_TextChanged(object sender, TextChangedEventArgs e){}
         private void Title_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
         private void Pages_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
@@ -60,5 +95,11 @@ namespace abis_app
         private void YearPublished_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
         private void Description_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
         private void Quantity_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
+        }
     }
 }

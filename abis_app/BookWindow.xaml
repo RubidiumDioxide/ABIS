@@ -37,8 +37,8 @@
             <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1C3B5F" FontWeight="Bold" FontStyle="Italic" Background="#FFF4D6BD">Название книги</TextBox>
             <TextBox MaxLength="4" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Background="#FFF4D6BD" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1C3B5F">Год</TextBox>
         </StackPanel>
-        
-        <DataGrid x:Name="Book_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="Book_Table_SelectionChanged"/>
+
+        <DataGrid Name="Book_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
     </Grid>
 
 </Window>

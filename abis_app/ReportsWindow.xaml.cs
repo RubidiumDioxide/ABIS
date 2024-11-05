@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,12 @@ namespace abis_app
         public void Reports_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Placeholder", "Show a table");
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
         }
     }
 }
