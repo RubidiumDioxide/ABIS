@@ -1,0 +1,44 @@
+﻿<Window x:Class="abis_app.BookReaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abis_app"
+        mc:Ignorable="d"
+        Title="BookReaderWindow" WindowState="Maximized" Background="#C5B79A">
+
+    <Window.Resources>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
+            <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource Button_Style}" Click="Add_BookReader_Button_Click" Foreground="#FF263C7E" FontStyle="Italic" FontWeight="Bold" BorderBrush="#FF263C7E"/>
+            <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource Button_Style}" Click="Delete_BookReader_Button_Click" Foreground="#FF263C7E" FontStyle="Italic" FontWeight="Bold" BorderBrush="#FF263C7E"/>
+            <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource Button_Style}" Click="Edit_BookReader_Button_Click" BorderBrush="#FF263C7E" Foreground="#FF263C7E" FontStyle="Italic" FontWeight="Bold"/>
+        </StackPanel>
+
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlock_Style}" Foreground="#FF263C7E" FontWeight="Bold" FontStyle="Italic">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
+
+        <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_BookReader_Button_Click" Foreground="#FF263C7E" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF263C7E"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+            <TextBox MaxLength="13" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF263C7E" BorderBrush="#FF263C7E">ISBN</TextBox>
+            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF263C7E" FontStyle="Italic" FontWeight="Bold" BorderBrush="#FF263C7E">Название книги</TextBox>
+            <TextBox MaxLength="4" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF263C7E" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF263C7E">Год</TextBox>
+        </StackPanel>
+
+        <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</Window>
