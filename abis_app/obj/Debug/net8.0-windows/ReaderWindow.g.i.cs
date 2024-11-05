@@ -93,7 +93,7 @@ namespace abis_app {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/abis_app;component/readerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/abis_app;V1.0.0.0;component/readerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ReaderWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

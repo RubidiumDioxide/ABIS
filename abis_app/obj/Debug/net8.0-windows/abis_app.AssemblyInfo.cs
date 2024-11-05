@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("abis_app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db06ae6b50d547c5edd923c62caa1cfa0b912699")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c105784a16edcb3bda72f3ba0772b016e1a4427")]
 [assembly: System.Reflection.AssemblyProductAttribute("abis_app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("abis_app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
