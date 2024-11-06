@@ -27,13 +27,21 @@ namespace abis_app
     {
         private InputWindow inputWindow;
         private bool isInputWindowOpen = false;
+        private bool lmcIsbn = false;
+        private bool lmcTitle = false;
+        private bool lmcYearPublished = false;
 
         public BookWindow()
         {
             InitializeComponent();
-            
+
+            Isbn_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConIsbnTextbox);
+            Title_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTitleTextbox);
+            YearPublished_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConYearPublishedTextbox);
+
             BookTableRefresh(); 
         }
+
         private void Add_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             inputWindow = new InputWindow("add");
@@ -97,10 +105,59 @@ namespace abis_app
             inputWindow.Close();
         }
 
+        void LMConIsbnTextbox(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!lmcIsbn)
+            {
+                Isbn_Textbox.Text = "";
+                lmcIsbn = true;
+            }
+        }
+
+        void LMConTitleTextbox(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!lmcTitle)
+            {
+                Title_Textbox.Text = "";
+                lmcTitle = true;
+            }
+        }
+
+        void LMConYearPublishedTextbox(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!lmcYearPublished)
+            {
+                YearPublished_Textbox.Text = "";
+                lmcYearPublished = true;
+            }
+        }
 
         private void Search_Book_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Performs search & alters the selection");
+            this.Book_Table.ItemsSource = null;
+
+            var itemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Authors });
+
+            if (Isbn_Textbox.Text != "")
+            {
+                long isbn = long.Parse(Isbn_Textbox.Text);
+                itemsSource = itemsSource.Where(c=>c.Isbn==isbn);
+            }
+
+            if (Title_Textbox.Text != "")
+            {
+                string title = Title_Textbox.Text;
+                itemsSource = itemsSource.Where(c => c.Title == title);
+            }
+
+
+            if (YearPublished_Textbox.Text != "")
+            {
+                int year_published = int.Parse(YearPublished_Textbox.Text);
+                itemsSource = itemsSource.Where(c => c.YearPublished == year_published);
+            }
+
+            Book_Table.ItemsSource = itemsSource;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -113,7 +170,7 @@ namespace abis_app
         {
             MainWindow.db.Books.Load();
             this.Book_Table.ItemsSource = null;
-            this.Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity });
+            this.Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Authors });
         }
     }
 }

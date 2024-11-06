@@ -1,0 +1,12 @@
+make it so that the child windows can be reopened 				DONE
+fix the updating of the datagrids for deleting a book 				DONE
+add editing a book 								DONE
+remove the ability to edit isbn							DONE
+when editing a book, load previous values in textboxes in input window 		DONE
+remove public isbn from BookWindow						DONE
+
+rework the whack logic with the input window (optional)
+add search (w/ sql select)							DONE
+talk to kat and maybe rework the database a bit (on deleting books)
+do all the same (add/delete/edit) to readers table 
+resolve the thing with authors 

@@ -3,34 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 namespace abis_app
 {
     static class Extensions
     {
-        public static DataGridRow GetSelectedRow(this DataGrid grid)
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
-            return (DataGridRow)grid.ItemContainerGenerator.ContainerFromItem(grid.SelectedItem);
+            if (depObj == null) yield return (T)Enumerable.Empty<T>();
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+            {
+                DependencyObject ithChild = VisualTreeHelper.GetChild(depObj, i);
+                if (ithChild == null) continue;
+                if (ithChild is T t) yield return t;
+                foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
+            }
         }
 
-        /*public static DataGridCell GetCell(this DataGrid grid, DataGridRow row, int column)
-        {
-            if (row != null)
-            {
-                DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
-
-                if (presenter == null)
-                {
-                    grid.ScrollIntoView(row, grid.Columns[column]);
-                    presenter = GetVisualChild<DataGridCellsPresenter>(row);
-                }
-
-                DataGridCell cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(column);
-                return cell;
-            }
-            return null;
-        }*/
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Media;
 
 namespace abis_app
 {
@@ -10,5 +11,4 @@ namespace abis_app
     public partial class App : Application
     {
     }
-
 }
