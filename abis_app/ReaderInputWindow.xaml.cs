@@ -25,28 +25,18 @@ namespace abis_app
         public List<String> Inputs;
         public event EventHandler inputEntered;
         public string type = "";
-        //public long isbn = 0000000000000;
+        public long gradebookNum = 00000;
 
         public ReaderInputWindow(AbisContext db, string _type, long _gradebookNum)
         {
             type = _type;
+            gradebookNum = _gradebookNum;
             
             if (type == "edit")
             {
-                //isbn = _isbn;
-
                 InitializeComponent();
 
-                //Book book = db.Books.Where(b => b.Isbn == isbn).FirstOrDefault();
                 Reader reader = db.Readers.Where(r => r.GradebookNum == _gradebookNum).FirstOrDefault();
-
-                /*ISBN_Textbox.Text = book.Isbn.ToString();
-                Title_Textbox.Text = book.Title.ToString();
-                Pages_Textbox.Text = book.Pages.ToString();
-                PublishingHouse_Textbox.Text = book.PublishingHouse.ToString();
-                YearPublished_Textbox.Text = book.YearPublished.ToString();
-                Description_Textbox.Text = book.Description.ToString();
-                Quantity_Textbox.Text = book.Quantity.ToString();*/
 
                 GradebookNum_Textbox.Text = reader.GradebookNum.ToString();
                 Surname_Textbox.Text = reader.Surname.ToString();
@@ -83,15 +73,6 @@ namespace abis_app
 
             inputEntered?.Invoke(this, EventArgs.Empty);
         }
-
-        //potentially useless, remove later if useless still
-        private void ISBN_TextBox_TextChanged(object sender, TextChangedEventArgs e){}
-        private void Title_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void Pages_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void PublishingHouse_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void YearPublished_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void Description_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void Quantity_TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
 
         protected override void OnClosing(CancelEventArgs e)
         {

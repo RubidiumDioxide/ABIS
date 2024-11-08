@@ -36,5 +36,23 @@ namespace abis
                 _db.SaveChanges();
             }
         }
+
+        public static void EditReader(AbisContext _db, long _gradebookNum, List<string> Inputs)
+        {
+            Reader reader = _db.Readers.Where(r=>r.GradebookNum == _gradebookNum).FirstOrDefault();
+
+            if (reader != null)
+            {
+                reader.Surname = Inputs[1];
+                reader.FirstName = Inputs[2];
+                reader.LastName = Inputs[3];
+                reader.GroupNum = short.Parse(Inputs[4]);
+                reader.DateOfBirth = DateOnly.Parse(Inputs[5]);
+                reader.Active = bool.Parse(Inputs[6]);
+                reader.Debt = bool.Parse(Inputs[7]);
+
+                _db.SaveChanges();
+            }
+        }
     }
 }

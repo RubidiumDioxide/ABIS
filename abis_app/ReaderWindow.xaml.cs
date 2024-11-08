@@ -63,7 +63,22 @@ namespace abis_app
 
         private void Edit_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Inputs GradebookNum & edits a reader");
+            if (Reader_Table.SelectedItems.Count > 0)
+            {
+                //get gredebookNum of the selected row 
+                dynamic value = Reader_Table.SelectedItem;
+
+                //edit 
+                inputWindow = new ReaderInputWindow(MainWindow.db, "edit", value.GradebookNum);
+                inputWindow.Owner = this;
+                inputWindow.inputEntered += new EventHandler(inputWindowEntered);
+                isInputWindowOpen = true;
+                inputWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
         }
 
         private void Search_Reader_Button_Click(object sender, RoutedEventArgs e)
@@ -77,10 +92,10 @@ namespace abis_app
             {
                 ReaderTools.AddReader(MainWindow.db, inputWindow.Inputs);
             }
-            /*if (inputWindow.type == "edit")
+            if (inputWindow.type == "edit")
             {
-                ReaderTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs);
-            }*/
+                ReaderTools.EditReader(MainWindow.db, inputWindow.gradebookNum, inputWindow.Inputs);
+            }
 
             ReaderTableRefresh();
             inputWindow.Close();
