@@ -24,6 +24,7 @@ namespace abis
             _db.Books.Add(book);
             _db.SaveChanges();
         }
+
         public static void DeleteBook(AbisContext _db, long _isbn)
         {
             Book book = _db.Books.Where(b => b.Isbn == _isbn).FirstOrDefault();

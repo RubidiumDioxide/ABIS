@@ -33,12 +33,12 @@
         <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic"/>
         
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontStyle="Italic" FontWeight="Bold" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Фамилия</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Имя</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic">Номер группы</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Действителен</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Долг</TextBox>
+            <TextBox Name="GradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
+            <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontStyle="Italic" FontWeight="Bold" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Фамилия</TextBox>
+            <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Имя</TextBox>
+            <TextBox Name="GroupNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic">Номер группы</TextBox>
+            <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Действителен</TextBox>
+            <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Долг</TextBox>
         </StackPanel>
         
         <DataGrid x:Name="Reader_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

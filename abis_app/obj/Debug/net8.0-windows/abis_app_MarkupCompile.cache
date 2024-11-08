@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\App.xaml
-6-1186371820
+7-416902375
 
-10450533775
+11-738287620
 239-683889314
-BookReaderWindow.xaml;BookWindow.xaml;InputWindow.xaml;MainWindow.xaml;ReaderWindow.xaml;ReportsWindow.xaml;
+BookInputWindow.xaml;BookReaderWindow.xaml;BookWindow.xaml;MainWindow.xaml;ReaderInputWindow.xaml;ReaderWindow.xaml;ReportsWindow.xaml;
 
 False
 

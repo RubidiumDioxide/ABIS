@@ -23,6 +23,5 @@ namespace abis_app
                 foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
             }
         }
-
     }
 }

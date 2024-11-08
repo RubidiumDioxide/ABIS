@@ -1,0 +1,20 @@
+﻿<Window x:Class="abis_app.BookInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abis_app"
+        mc:Ignorable="d"
+        Title="InputWindow" Height="450" Width="800" Background="#263C7E"> 
+    <StackPanel>
+        <TextBox Name = "ISBN_Textbox" MaxLength="13" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">ISBN</TextBox>
+        <TextBox Name="Title_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Название книги</TextBox>
+        <TextBox Name="Pages_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Кол-во страниц</TextBox>
+        <TextBox Name="PublishingHouse_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Название издательства</TextBox>
+        <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Год</TextBox>
+        <TextBox Name="Description_Textbox" MaxLength="200" TextWrapping="Wrap" FontSize="14">Краткое Описание</TextBox>
+        <TextBox Name="Quantity_Textbox" MaxLength="100" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Кол-во копий</TextBox>
+        <!--TextBox Name="Authors_Textbox" MaxLength="200" TextChanged="Quantity_TextBox_TextChanged" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Авторы (ID через запятую, должна быть запись в таблице Авторы)</TextBox-->
+        <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Background="#FFC5B79A" Click="Input_Button_Click" Foreground="#FF263C7E" FontSize="14" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF142761"/>
+    </StackPanel>
+</Window>

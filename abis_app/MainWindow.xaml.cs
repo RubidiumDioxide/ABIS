@@ -39,9 +39,11 @@ namespace abis_app
             {
                 bookWindow = new BookWindow();
                 bookWindow.Owner = this;
+                
             }
 
             bookWindow.Show();
+            bookWindow.LinkEvents();
             bookWindow.Focus();
         }
 
@@ -54,6 +56,7 @@ namespace abis_app
             }
 
             readerWindow.Show();
+            readerWindow.LinkEvents();
             readerWindow.Focus();
         }
         

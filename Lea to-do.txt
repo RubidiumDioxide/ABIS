@@ -10,3 +10,4 @@ add search (w/ sql select)							DONE
 talk to kat and maybe rework the database a bit (on deleting books)
 do all the same (add/delete/edit) to readers table 
 resolve the thing with authors 
+make a universal LinkEvents method

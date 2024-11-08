@@ -13,7 +13,7 @@
     <Compile Update="BookWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="InputWindow.xaml.cs">
+    <Compile Update="BookInputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ReaderWindow.xaml.cs">
@@ -24,13 +24,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ReaderInputWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="BookReaderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="BookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="InputWindow.xaml">
+    <Page Update="BookInputWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

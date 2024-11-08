@@ -23,5 +23,4 @@ public partial class Book
     public virtual ICollection<BookReader> BookReaders { get; set; } = new List<BookReader>();
 
     public virtual ICollection<Author> Authors { get; set; } = new List<Author>();
-
 }

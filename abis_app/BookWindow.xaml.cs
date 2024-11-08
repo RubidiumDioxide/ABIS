@@ -25,24 +25,19 @@ namespace abis_app
     /// </summary>
     public partial class BookWindow : Window
     {
-        private InputWindow inputWindow;
+        private BookInputWindow inputWindow;
         private bool isInputWindowOpen = false;
         private Dictionary<string, bool> lmc = new Dictionary<string, bool>() { { "Isbn_Textbox", false },{ "Title_Textbox", false}, { "YearPublished_Textbox", false} };
 
         public BookWindow()
         {
             InitializeComponent();
-
-            Isbn_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
-            Title_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
-            YearPublished_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
-
             BookTableRefresh(); 
         }
 
         private void Add_Book_Button_Click(object sender, RoutedEventArgs e)
         {
-            inputWindow = new InputWindow("add");
+            inputWindow = new BookInputWindow("add");
             inputWindow.Owner = this;
             inputWindow.inputEntered += new EventHandler(inputWindowEntered);
             isInputWindowOpen = true;
@@ -76,7 +71,7 @@ namespace abis_app
                 dynamic value = Book_Table.SelectedItem;
 
                 //edit 
-                inputWindow = new InputWindow(MainWindow.db, "edit", value.Isbn);
+                inputWindow = new BookInputWindow(MainWindow.db, "edit", value.Isbn);
                 inputWindow.Owner = this;
                 inputWindow.inputEntered += new EventHandler(inputWindowEntered);
                 isInputWindowOpen = true;
@@ -116,7 +111,6 @@ namespace abis_app
             Book_Table.ItemsSource = itemsSource;
         }
 
-
         void inputWindowEntered(object sender, EventArgs e)
         {
             if (inputWindow.type == "add")
@@ -131,7 +125,15 @@ namespace abis_app
             BookTableRefresh();
             inputWindow.Close();
         }
-
+        
+        public void LinkEvents()
+        {
+            foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this))
+            {
+                t.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
+            }
+        }
+        
         void LMConTextbox(object sender, System.Windows.RoutedEventArgs e)
         {
             foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this))

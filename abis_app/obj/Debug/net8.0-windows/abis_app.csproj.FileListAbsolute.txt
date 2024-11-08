@@ -378,7 +378,6 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\ab
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\abis_app.csproj.AssemblyReference.cache
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookReaderWindow.g.cs
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookWindow.g.cs
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\InputWindow.g.cs
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReaderWindow.g.cs
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReportsWindow.g.cs
@@ -388,7 +387,6 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ab
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\App.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookReaderWindow.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookWindow.baml
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\InputWindow.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReaderWindow.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReportsWindow.baml
@@ -404,3 +402,7 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\re
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\abis_app.pdb
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\abis_app.genruntimeconfig.cache
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ref\abis_app.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookInputWindow.g.cs
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReaderInputWindow.g.cs
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookInputWindow.baml
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\ReaderInputWindow.baml
