@@ -44,7 +44,21 @@ namespace abis_app
 
         private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Inputs GradebookNum & deletes a reader");
+            if (Reader_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = Reader_Table.SelectedItem;
+
+                //delete function
+                ReaderTools.DeleteReader(MainWindow.db, value.GradebookNum);
+
+                //reset the datagrid
+                this.ReaderTableRefresh();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
         }
 
         private void Edit_Reader_Button_Click(object sender, RoutedEventArgs e)

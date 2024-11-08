@@ -26,5 +26,15 @@ namespace abis
             _db.SaveChanges();
         }
 
+        public static void DeleteReader(AbisContext _db, long _gradebookNum)
+        {
+            Reader reader = _db.Readers.Where(b => b.GradebookNum == _gradebookNum).FirstOrDefault();
+
+            if (reader != null)
+            {
+                _db.Readers.Remove(reader);
+                _db.SaveChanges();
+            }
+        }
     }
 }
