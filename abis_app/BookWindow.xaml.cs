@@ -27,17 +27,15 @@ namespace abis_app
     {
         private InputWindow inputWindow;
         private bool isInputWindowOpen = false;
-        private bool lmcIsbn = false;
-        private bool lmcTitle = false;
-        private bool lmcYearPublished = false;
+        private Dictionary<string, bool> lmc = new Dictionary<string, bool>() { { "Isbn_Textbox", false },{ "Title_Textbox", false}, { "YearPublished_Textbox", false} };
 
         public BookWindow()
         {
             InitializeComponent();
 
-            Isbn_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConIsbnTextbox);
-            Title_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTitleTextbox);
-            YearPublished_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConYearPublishedTextbox);
+            Isbn_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
+            Title_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
+            YearPublished_Textbox.GotFocus += new System.Windows.RoutedEventHandler(LMConTextbox);
 
             BookTableRefresh(); 
         }
@@ -90,48 +88,6 @@ namespace abis_app
             }
         }
 
-        void inputWindowEntered(object sender, EventArgs e)
-        {
-            if (inputWindow.type == "add")
-            {
-                BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
-            }
-            if (inputWindow.type == "edit")
-            {
-                BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs); 
-            }
-
-            BookTableRefresh();
-            inputWindow.Close();
-        }
-
-        void LMConIsbnTextbox(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (!lmcIsbn)
-            {
-                Isbn_Textbox.Text = "";
-                lmcIsbn = true;
-            }
-        }
-
-        void LMConTitleTextbox(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (!lmcTitle)
-            {
-                Title_Textbox.Text = "";
-                lmcTitle = true;
-            }
-        }
-
-        void LMConYearPublishedTextbox(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (!lmcYearPublished)
-            {
-                YearPublished_Textbox.Text = "";
-                lmcYearPublished = true;
-            }
-        }
-
         private void Search_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Book_Table.ItemsSource = null;
@@ -141,7 +97,7 @@ namespace abis_app
             if (Isbn_Textbox.Text != "")
             {
                 long isbn = long.Parse(Isbn_Textbox.Text);
-                itemsSource = itemsSource.Where(c=>c.Isbn==isbn);
+                itemsSource = itemsSource.Where(c => c.Isbn == isbn);
             }
 
             if (Title_Textbox.Text != "")
@@ -158,6 +114,33 @@ namespace abis_app
             }
 
             Book_Table.ItemsSource = itemsSource;
+        }
+
+
+        void inputWindowEntered(object sender, EventArgs e)
+        {
+            if (inputWindow.type == "add")
+            {
+                BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
+            }
+            if (inputWindow.type == "edit")
+            {
+                BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs); 
+            }
+
+            BookTableRefresh();
+            inputWindow.Close();
+        }
+
+        void LMConTextbox(object sender, System.Windows.RoutedEventArgs e)
+        {
+            foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this))
+            {
+                if ((sender as TextBox) == t && lmc[(sender as TextBox).Name] == false) {
+                    (sender as TextBox).Text = "";
+                    lmc[(sender as TextBox).Name] = true;
+                }
+            }
         }
 
         protected override void OnClosing(CancelEventArgs e)

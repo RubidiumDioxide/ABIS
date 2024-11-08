@@ -30,7 +30,7 @@
        
         <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlock_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7B">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
         
-        <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic"/>
         
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
             <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
