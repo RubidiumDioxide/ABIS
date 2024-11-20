@@ -4039,23 +4039,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\teote\\.nuget\\packages\\": {},
+    "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis\\abis.csproj",
+      "projectUniqueName": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis\\abis.csproj",
       "projectName": "abis",
-      "projectPath": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis\\abis.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis\\obj\\",
+      "projectPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis\\abis.csproj",
+      "packagesPath": "C:\\Users\\teote\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\teote\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4115,7 +4115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

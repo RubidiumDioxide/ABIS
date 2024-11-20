@@ -23,22 +23,22 @@
         </Grid.RowDefinitions>
         
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
-            <Button x:Name="Add_Reader_Button" Content="Добавить" Style="{StaticResource Button_Style}" Click="Add_Reader_Button_Click" Foreground="#FF1A4D7B" BorderBrush="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic"/>
-            <Button x:Name="Delete_Reader_Button" Content="Удалить" Style="{StaticResource Button_Style}" Click="Delete_Reader_Button_Click" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7B" BorderBrush="#FF1A4D7B"/>
-            <Button x:Name="Edit_Reader_Button" Content="Изменить" Style="{StaticResource Button_Style}" Click="Edit_Reader_Button_Click" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B"/>
+            <Button x:Name="Add_Reader_Button" Content="Добавить" Style="{StaticResource BookReaderButton_Style}" Click="Add_Reader_Button_Click"/>
+            <Button x:Name="Delete_Reader_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_Reader_Button_Click"/>
+            <Button x:Name="Edit_Reader_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_Reader_Button_Click"/>
         </StackPanel>
        
-        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBlock_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7B">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
         
-        <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click"/>
         
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox Name="GradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
-            <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontStyle="Italic" FontWeight="Bold" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Фамилия</TextBox>
-            <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E">Имя</TextBox>
-            <TextBox Name="GroupNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontWeight="Bold" FontStyle="Italic">Номер группы</TextBox>
-            <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" BorderBrush="#FF1A4D7E" Foreground="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Действителен</TextBox>
-            <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource TextBox_Style}" Foreground="#FF1A4D7E" BorderBrush="#FF1A4D7E" FontStyle="Italic" FontWeight="Bold">Долг</TextBox>
+            <TextBox Name="GradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
+            <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия</TextBox>
+            <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Имя</TextBox>
+            <TextBox Name="GroupNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер группы</TextBox>
+            <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Действителен</TextBox>
+            <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Долг</TextBox>
         </StackPanel>
         
         <DataGrid x:Name="Reader_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

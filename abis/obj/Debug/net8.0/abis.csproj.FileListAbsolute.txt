@@ -72,3 +72,17 @@ C:\Users\User\storage\courses\ввип\ABIS\abis\obj\Debug\net8.0\refint\abis.dl
 C:\Users\User\storage\courses\ввип\ABIS\abis\obj\Debug\net8.0\abis.pdb
 C:\Users\User\storage\courses\ввип\ABIS\abis\obj\Debug\net8.0\abis.genruntimeconfig.cache
 C:\Users\User\storage\courses\ввип\ABIS\abis\obj\Debug\net8.0\ref\abis.dll
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\bin\Debug\net8.0\abis.deps.json
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\bin\Debug\net8.0\abis.runtimeconfig.json
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\bin\Debug\net8.0\abis.dll
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\bin\Debug\net8.0\abis.pdb
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.csproj.AssemblyReference.cache
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.AssemblyInfoInputs.cache
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.AssemblyInfo.cs
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.csproj.CoreCompileInputs.cache
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.dll
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\refint\abis.dll
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.pdb
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\abis.genruntimeconfig.cache
+C:\Users\teote\Desktop\jopa\ABIS-master\abis\obj\Debug\net8.0\ref\abis.dll

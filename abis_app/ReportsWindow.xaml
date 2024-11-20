@@ -9,14 +9,14 @@
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
             <GradientStop Color="#1A4D7B" Offset="0"/>
-            <GradientStop Color="#D8F1B6" Offset="1"/>
+            <GradientStop Color="AliceBlue" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
 
     <Window.Resources>
     </Window.Resources>
     <StackPanel>
-        <Button x:Name="Book_Reports_Button" Content="Отчеты по поставкам книг" Style="{StaticResource Button_Style}" Grid.Row="1" Grid.Column="2" Click="Reports_Book_Button_Click" FontSize="16" FontWeight="Bold" FontStyle="Italic" Width="300" Foreground="#FF24567E" Background="#FFCFE9B3" BorderBrush="#FF103E64"/>
+        <Button x:Name="Book_Reports_Button" Content="Отчеты по поставкам книг" Style="{StaticResource MainWindowButton_Style}" Grid.Row="1" Grid.Column="2" Click="Reports_Book_Button_Click"/>
     </StackPanel>
 
 </Window>

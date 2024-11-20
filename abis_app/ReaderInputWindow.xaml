@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="InputWindow" Height="450" Width="800" Background="GreenYellow"> 
+        Title="InputWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
+            <GradientStop Color="#1C3B5F" Offset="0"/>
+            <GradientStop Color="AliceBlue" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <StackPanel>
-        <TextBox Name = "GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Номер зачетной книжки</TextBox>
-        <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Фамилия</TextBox>
-        <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Имя</TextBox>
-        <TextBox Name="LastName_Textbox" MaxLength="100" TextWrapping="Wrap" FontStyle="Italic" FontSize="14">Отчество</TextBox>
-        <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Номер группы</TextBox>
-        <TextBox Name="DateOfBirth_Textbox" MaxLength="200" TextWrapping="Wrap" FontSize="14">Дата рождения</TextBox>
-        <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Действителен</TextBox>
-        <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" FontSize="14" FontStyle="Italic">Долг</TextBox>
-        <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Background="#FFC5B79A" Click="Input_Button_Click" Foreground="#FF263C7E" FontSize="14" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF142761"/>
+        <TextBox Name = "GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер зачетной книжки</TextBox>
+        <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Фамилия</TextBox>
+        <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Имя</TextBox>
+        <TextBox Name="LastName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Отчество</TextBox>
+        <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер группы</TextBox>
+        <TextBox Name="DateOfBirth_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата рождения</TextBox>
+        <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Действителен</TextBox>
+        <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Долг</TextBox>
+        <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}"/>
     </StackPanel>
 </Window>
