@@ -2899,23 +2899,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teote\\.nuget\\packages\\": {},
-    "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis_app\\abis_app.csproj",
+      "projectUniqueName": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis_app\\abis_app.csproj",
       "projectName": "abis_app",
-      "projectPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis_app\\abis_app.csproj",
-      "packagesPath": "C:\\Users\\teote\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis_app\\obj\\",
+      "projectPath": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis_app\\abis_app.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis_app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\teote\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2931,8 +2931,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis\\abis.csproj": {
-              "projectPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\abis\\abis.csproj"
+            "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis\\abis.csproj": {
+              "projectPath": "C:\\Users\\User\\storage\\courses\\ввип\\ABIS\\abis\\abis.csproj"
             }
           }
         }
@@ -2970,7 +2970,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
