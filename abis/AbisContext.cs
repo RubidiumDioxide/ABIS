@@ -15,53 +15,22 @@ public partial class AbisContext : DbContext
     {
     }
 
-    public virtual DbSet<Author> Authors { get; set; }
-
     public virtual DbSet<Book> Books { get; set; }
+
+    public virtual DbSet<BookHistory> BookHistories { get; set; }
 
     public virtual DbSet<BookReader> BookReaders { get; set; }
 
     public virtual DbSet<Reader> Readers { get; set; }
 
-    //Lea
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)=> optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
-    
-    //Kat
-    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)=> optionsBuilder.UseSqlServer("Server=LAPTOP-FAIVFFI6\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
+    public virtual DbSet<ReaderHistory> ReaderHistories { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Author>(entity =>
-        {
-            entity.ToTable("Author");
-
-            entity.HasIndex(e => e.Surname, "Author_Surname_Ind");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.FirstName).HasMaxLength(20);
-            entity.Property(e => e.LastName).HasMaxLength(20);
-            entity.Property(e => e.Surname).HasMaxLength(20);
-
-            entity.HasMany(d => d.BookIsbns).WithMany(p => p.Authors)
-                .UsingEntity<Dictionary<string, object>>(
-                    "BookAuthor",
-                    r => r.HasOne<Book>().WithMany()
-                        .HasForeignKey("BookIsbn")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Book-Book_Author"),
-                    l => l.HasOne<Author>().WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_Author-Book_Author"),
-                    j =>
-                    {
-                        j.HasKey("AuthorId", "BookIsbn");
-                        j.ToTable("Book_Author");
-                        j.IndexerProperty<int>("AuthorId").HasColumnName("AuthorID");
-                        j.IndexerProperty<long>("BookIsbn").HasColumnName("BookISBN");
-                    });
-        });
-
         modelBuilder.Entity<Book>(entity =>
         {
             entity.HasKey(e => e.Isbn);
@@ -75,9 +44,31 @@ public partial class AbisContext : DbContext
             entity.Property(e => e.Isbn)
                 .ValueGeneratedNever()
                 .HasColumnName("ISBN");
+            entity.Property(e => e.Active).HasColumnName("active");
+            entity.Property(e => e.Author).HasMaxLength(200);
             entity.Property(e => e.Description).HasMaxLength(500);
             entity.Property(e => e.PublishingHouse).HasMaxLength(200);
             entity.Property(e => e.Title).HasMaxLength(200);
+        });
+
+        modelBuilder.Entity<BookHistory>(entity =>
+        {
+            entity.HasKey(e => e.BookIsbn);
+
+            entity.ToTable("BookHistory");
+
+            entity.Property(e => e.BookIsbn)
+                .ValueGeneratedNever()
+                .HasColumnName("BookISBN");
+            entity.Property(e => e.Action)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.OperationId).HasColumnName("OperationID");
+
+            entity.HasOne(d => d.BookIsbnNavigation).WithOne(p => p.BookHistory)
+                .HasForeignKey<BookHistory>(d => d.BookIsbn)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Book-BookHistory");
         });
 
         modelBuilder.Entity<BookReader>(entity =>
@@ -114,6 +105,24 @@ public partial class AbisContext : DbContext
             entity.Property(e => e.FirstName).HasMaxLength(20);
             entity.Property(e => e.LastName).HasMaxLength(20);
             entity.Property(e => e.Surname).HasMaxLength(20);
+        });
+
+        modelBuilder.Entity<ReaderHistory>(entity =>
+        {
+            entity.HasKey(e => e.ReaderGradebookNum);
+
+            entity.ToTable("ReaderHistory");
+
+            entity.Property(e => e.ReaderGradebookNum).ValueGeneratedNever();
+            entity.Property(e => e.Action)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.OperationId).HasColumnName("OperationID");
+
+            entity.HasOne(d => d.ReaderGradebookNumNavigation).WithOne(p => p.ReaderHistory)
+                .HasForeignKey<ReaderHistory>(d => d.ReaderGradebookNum)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Reader-ReaderHistory");
         });
 
         OnModelCreatingPartial(modelBuilder);

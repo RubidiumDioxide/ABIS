@@ -87,7 +87,7 @@ namespace abis_app
         {
             this.Book_Table.ItemsSource = null;
 
-            var itemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Authors });
+            var itemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Author, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Active });
 
             if (Isbn_Textbox.Text != "")
             {
@@ -155,7 +155,7 @@ namespace abis_app
         {
             MainWindow.db.Books.Load();
             this.Book_Table.ItemsSource = null;
-            this.Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Authors });
+            this.Book_Table.ItemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Author, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Active });
         }
     }
 }

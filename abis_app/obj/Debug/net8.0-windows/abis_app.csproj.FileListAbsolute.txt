@@ -346,7 +346,6 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Mi
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
@@ -354,9 +353,6 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Mi
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Memory.Data.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
@@ -366,12 +362,6 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\ru
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\abis.dll
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\abis.pdb
@@ -489,3 +479,10 @@ C:\Users\teote\Desktop\jopa\ABIS-master\abis_app\obj\Debug\net8.0-windows\refint
 C:\Users\teote\Desktop\jopa\ABIS-master\abis_app\obj\Debug\net8.0-windows\abis_app.pdb
 C:\Users\teote\Desktop\jopa\ABIS-master\abis_app\obj\Debug\net8.0-windows\abis_app.genruntimeconfig.cache
 C:\Users\teote\Desktop\jopa\ABIS-master\abis_app\obj\Debug\net8.0-windows\ref\abis_app.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

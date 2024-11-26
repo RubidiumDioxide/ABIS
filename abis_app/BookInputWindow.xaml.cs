@@ -41,11 +41,13 @@ namespace abis_app
 
                 ISBN_Textbox.Text = book.Isbn.ToString();
                 Title_Textbox.Text = book.Title.ToString();
+                Author_Textbox.Text = book.Author.ToString(); 
                 Pages_Textbox.Text = book.Pages.ToString();
                 PublishingHouse_Textbox.Text = book.PublishingHouse.ToString();
                 YearPublished_Textbox.Text = book.YearPublished.ToString();
                 Description_Textbox.Text = book.Description.ToString();
                 Quantity_Textbox.Text = book.Quantity.ToString();
+                Active_Textbox.Text = book.Active.ToString(); 
 
                 ISBN_Textbox.IsEnabled = false;
             }
@@ -78,11 +80,6 @@ namespace abis_app
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
-        }
-
-        private void Input_Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

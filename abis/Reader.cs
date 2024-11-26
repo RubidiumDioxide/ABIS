@@ -22,4 +22,6 @@ public partial class Reader
     public bool Debt { get; set; }
 
     public virtual ICollection<BookReader> BookReaders { get; set; } = new List<BookReader>();
+
+    public virtual ReaderHistory? ReaderHistory { get; set; }
 }
