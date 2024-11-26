@@ -79,5 +79,10 @@ namespace abis_app
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
         }
+
+        private void Input_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

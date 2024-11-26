@@ -21,6 +21,6 @@
         <TextBox Name="DateOfBirth_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата рождения</TextBox>
         <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Действителен</TextBox>
         <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Долг</TextBox>
-        <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>
     </StackPanel>
 </Window>
