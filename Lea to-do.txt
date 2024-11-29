@@ -7,7 +7,17 @@ remove public isbn from BookWindow						DONE
 
 rework the whack logic with the input window (optional)
 add search (w/ sql select)							DONE
-talk to kat and maybe rework the database a bit (on deleting books)
-do all the same (add/delete/edit) to readers table 
-resolve the thing with authors 
-make a universal LinkEvents method
+talk to kat and maybe rework the database a bit (on deleting books)    		
+do all the same (add/delete/edit) to readers table 				DONE
+resolve the thing with authors 							DONE
+	
+add the ability to add a readerbook entry 					UNTESTED
+add the ability to edit a readerbook entry (can edit date returned only) 	UNTESTED
+add basic try-catches to everything regarding alterations to database 		UNTESTED
+tweak the max limit of characters for each textbox according to db scheme
+replace .where().firstordefault() with find()
+change true false textboxes to radiobuttons
+add restrictions: can't borrow an inactive book or a book with 0 quantity
+decrease/increase book quantity when borrowed/returned
+add serach reader 
+make it so that the dateborrowed field if filled automatically based on current date

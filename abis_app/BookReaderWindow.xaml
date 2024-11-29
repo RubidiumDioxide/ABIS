@@ -24,7 +24,7 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
             <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource BookReaderButton_Style}" Click="Add_BookReader_Button_Click"/>
-            <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_BookReader_Button_Click"/>
+            <!--Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_BookReader_Button_Click"/-->
             <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_BookReader_Button_Click"/>
         </StackPanel>
 
@@ -33,9 +33,10 @@
         <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_BookReader_Button_Click"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
-            <TextBox MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Год</TextBox>
+            <TextBox Name="BookIsbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
+            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox-->
+            <TextBox Name="ReaderGradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
+            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox-->
         </StackPanel>
 
         <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

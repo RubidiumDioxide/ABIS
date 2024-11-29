@@ -36,10 +36,11 @@ namespace abis_app
         private void Add_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
             inputWindow = new ReaderInputWindow("add");
-            inputWindow.Owner = this;
+            //inputWindow.Owner = this;
             inputWindow.inputEntered += new EventHandler(inputWindowEntered);
             isInputWindowOpen = true;
             inputWindow.Show();
+            inputWindow.Focus();
         }
 
         private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
@@ -50,7 +51,14 @@ namespace abis_app
                 dynamic value = Reader_Table.SelectedItem;
 
                 //delete function
-                ReaderTools.DeleteReader(MainWindow.db, value.GradebookNum);
+                try
+                {
+                    ReaderTools.DeleteReader(MainWindow.db, value.GradebookNum);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to delete a Reader");
+                }
 
                 //reset the datagrid
                 this.ReaderTableRefresh();
@@ -70,10 +78,11 @@ namespace abis_app
 
                 //edit 
                 inputWindow = new ReaderInputWindow(MainWindow.db, "edit", value.GradebookNum);
-                inputWindow.Owner = this;
+                //inputWindow.Owner = this;
                 inputWindow.inputEntered += new EventHandler(inputWindowEntered);
                 isInputWindowOpen = true;
                 inputWindow.Show();
+                inputWindow.Focus();
             }
             else
             {
@@ -90,11 +99,25 @@ namespace abis_app
         {
             if (inputWindow.type == "add")
             {
-                ReaderTools.AddReader(MainWindow.db, inputWindow.Inputs);
+                try
+                {
+                    ReaderTools.AddReader(MainWindow.db, inputWindow.Inputs);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to add a Reader");
+                }
             }
             if (inputWindow.type == "edit")
             {
-                ReaderTools.EditReader(MainWindow.db, inputWindow.gradebookNum, inputWindow.Inputs);
+                try
+                {
+                    ReaderTools.EditReader(MainWindow.db, inputWindow.gradebookNum, inputWindow.Inputs);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to edit a Reader");
+                }
             }
 
             ReaderTableRefresh();

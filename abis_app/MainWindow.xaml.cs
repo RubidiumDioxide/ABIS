@@ -28,17 +28,20 @@ namespace abis_app
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.MainWindow = this;
+            Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             db = new AbisContext();
             db.Books.Load();
             db.Readers.Load();
             db.BookReaders.Load();
         }
+
         private void Book_Button_Click(object sender, RoutedEventArgs e)
         {
             if (bookWindow == null)
             {
                 bookWindow = new BookWindow();
-                bookWindow.Owner = this;
+                //bookWindow.Owner = this;
                 
             }
 
@@ -52,7 +55,7 @@ namespace abis_app
             if(readerWindow == null)
             {
                 readerWindow = new ReaderWindow();
-                readerWindow.Owner = this;
+                //readerWindow.Owner = this;
             }
 
             readerWindow.Show();
@@ -65,10 +68,11 @@ namespace abis_app
             if (bookReaderWindow == null)
             {
                 bookReaderWindow = new BookReaderWindow();
-                bookReaderWindow.Owner = this;
+                //bookReaderWindow.Owner = this;
             }
 
             bookReaderWindow.Show();
+            bookReaderWindow.LinkEvents();
             bookReaderWindow.Focus();
         }
 
@@ -77,7 +81,7 @@ namespace abis_app
             if (reportsWindow == null)
             {
                 reportsWindow = new ReportsWindow();
-                reportsWindow.Owner = this;
+                //reportsWindow.Owner = this;
             }
             
             reportsWindow.Show();
@@ -85,8 +89,8 @@ namespace abis_app
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Environment.Exit(0);
+        {   
+            Application.Current.Shutdown();
         }
     }
 }

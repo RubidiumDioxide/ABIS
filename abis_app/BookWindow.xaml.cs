@@ -38,10 +38,11 @@ namespace abis_app
         private void Add_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             inputWindow = new BookInputWindow("add");
-            inputWindow.Owner = this;
+            //inputWindow.Owner = this;
             inputWindow.inputEntered += new EventHandler(inputWindowEntered);
             isInputWindowOpen = true;
             inputWindow.Show();
+            inputWindow.Focus();
         }
 
         private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
@@ -52,7 +53,14 @@ namespace abis_app
                 dynamic value = Book_Table.SelectedItem;
 
                 //delete function
-                BookTools.DeleteBook(MainWindow.db, value.Isbn);
+                try
+                {
+                    BookTools.DeleteBook(MainWindow.db, value.Isbn);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to delete a Book");
+                }
 
                 //reset the datagrid
                 this.BookTableRefresh();
@@ -72,10 +80,11 @@ namespace abis_app
 
                 //edit 
                 inputWindow = new BookInputWindow(MainWindow.db, "edit", value.Isbn);
-                inputWindow.Owner = this;
+                //inputWindow.Owner = this;
                 inputWindow.inputEntered += new EventHandler(inputWindowEntered);
                 isInputWindowOpen = true;
                 inputWindow.Show();
+                inputWindow.Focus();
             }
             else
             {
@@ -115,11 +124,25 @@ namespace abis_app
         {
             if (inputWindow.type == "add")
             {
-                BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
+                try
+                {
+                    BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to add a Book");
+                }
             }
             if (inputWindow.type == "edit")
             {
-                BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs); 
+                try
+                {
+                    BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs);
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to edit a Book");
+                }
             }
 
             BookTableRefresh();
