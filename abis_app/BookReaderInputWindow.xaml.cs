@@ -25,34 +25,33 @@ namespace abis_app
         public List<String> Inputs;
         public event EventHandler inputEntered;
         public string type = "";
-        public long bookIsbn = 0;
-        public int readerGradebookNum = 0;  
+        public long id;
 
-        public BookReaderInputWindow(AbisContext db, string _type, long _bookIsbn, int _readerGradebookNum)
+        public BookReaderInputWindow(AbisContext db, string _type, long _id)
         {
             type = _type;
 
             if (type == "edit")
             {
-                bookIsbn = _bookIsbn;
-                readerGradebookNum = _readerGradebookNum;
+                id = _id;
                 
                 InitializeComponent();
 
-                BookReader bookReader = db.BookReaders.Where(b => b.BookIsbn == bookIsbn && b.ReaderGradebookNum == readerGradebookNum).FirstOrDefault();
+                BookReader bookReader = db.BookReaders.Find(id);
 
                 ReaderGradebookNum_Textbox.Text = bookReader.ReaderGradebookNum.ToString();
                 BookIsbn_Textbox.Text = bookReader.BookIsbn.ToString();
-                DateBorrowed_Textbox.Text = bookReader.DateBorrowed.ToString();
+                /*DateBorrowed_Textbox.Text = bookReader.DateBorrowed.ToString();
                 DateReturned_Textbox.Text = bookReader.DateReturned.ToString();
-                Returned_Textbox.Text = bookReader.Returned.ToString();
+                DateDeadline_Textbox.Text = bookReader.DateDeadline.ToString();
+                Returned_Textbox.Text = bookReader.Returned.ToString();*/
 
-                foreach(TextBox t in Extensions.FindVisualChildren<TextBox>(this))
-                {
-                    t.IsEnabled = false;
-                }
-
-                DateReturned_Textbox.IsEnabled = true;
+                ReaderGradebookNum_Textbox.IsEnabled = false;
+                BookIsbn_Textbox.IsEnabled = false;
+                /*DateBorrowed_Textbox.IsEnabled = false;
+                DateReturned_Textbox.IsEnabled = true; 
+                DateDeadline_Textbox.IsEnabled = true;
+                Returned_Textbox.IsEnabled = true;*/
             }
         }
 
@@ -64,13 +63,12 @@ namespace abis_app
             {
                 InitializeComponent(); 
 
-                foreach(TextBox t in Extensions.FindVisualChildren<TextBox>(this))
-                {
-                    t.IsEnabled = true;
-                }
-
+                ReaderGradebookNum_Textbox.IsEnabled = true;
+                BookIsbn_Textbox.IsEnabled = true;
+                /*DateBorrowed_Textbox.IsEnabled = true;
                 DateReturned_Textbox.IsEnabled = false;
-                Returned_Textbox.IsEnabled = false; 
+                DateDeadline_Textbox.IsEnabled = false;
+                Returned_Textbox.IsEnabled = false;*/
             }
         }
 
@@ -79,7 +77,10 @@ namespace abis_app
             Inputs = new List<String>();
             foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this))
             {
-                Inputs.Add(t.Text);
+                if (t.IsEnabled == true)
+                {
+                    Inputs.Add(t.Text);
+                }
             }
 
             inputEntered?.Invoke(this, EventArgs.Empty);

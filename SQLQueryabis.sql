@@ -31,6 +31,7 @@ CREATE TABLE [Reader] (
 GO
 
 CREATE TABLE [Book_Reader] (
+	[ID] bigint IDENTITY, 
 	[ReaderGradebookNum] int NOT NULL, 
 	[BookISBN] bigint NOT NULL, 
 	[DateBorrowed] date NOT NULL, 
@@ -38,7 +39,7 @@ CREATE TABLE [Book_Reader] (
 	[DateDeadline] date NOT NULL,
 	[Returned] bit DEFAULT 0 NOT NULL, 
 
-	CONSTRAINT [PK_Book_Reader] PRIMARY KEY ([ReaderGradebookNum],[BookISBN])
+	CONSTRAINT [PK_Book_Reader] PRIMARY KEY ([ID])
 )
 GO
 
@@ -79,7 +80,7 @@ ALTER TABLE [Book_Reader]
 	ADD 
 		CONSTRAINT [FK_Reader-Book_Reader] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]),
 		CONSTRAINT [FK_Book-Book_Reader] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]),
-		CONSTRAINT [Dates] CHECK (([DateBorrowed] < [DateReturned]) and ([DateBorrowed] < [DateDeadline]))
+		CONSTRAINT [Dates] CHECK (([DateBorrowed] <= [DateReturned]) and ([DateBorrowed] <= [DateDeadline]))
 GO
 
 ALTER TABLE [BookHistory]

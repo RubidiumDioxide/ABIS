@@ -36,7 +36,7 @@ namespace abis_app
             {
                 InitializeComponent();
 
-                Reader reader = db.Readers.Where(r => r.GradebookNum == _gradebookNum).FirstOrDefault();
+                Reader reader = db.Readers.Find(_gradebookNum);
 
                 GradebookNum_Textbox.Text = reader.GradebookNum.ToString();
                 Surname_Textbox.Text = reader.Surname.ToString();
@@ -44,8 +44,8 @@ namespace abis_app
                 LastName_Textbox.Text = reader.LastName.ToString();
                 GroupNum_Textbox.Text = reader.GroupNum.ToString();
                 DateOfBirth_Textbox.Text = reader.DateOfBirth.ToString();
-                Active_Textbox.Text = reader.Active.ToString();
-                Debt_Textbox.Text = reader.Debt.ToString();
+                Active_Checkbox.IsChecked = reader.Active;
+                Debt_Checkbox.IsChecked = reader.Debt;
 
                 GradebookNum_Textbox.IsEnabled = false;
             }
@@ -70,6 +70,9 @@ namespace abis_app
             {
                 Inputs.Add(t.Text);
             }
+
+            Inputs.Add(Active_Checkbox.IsChecked.ToString());
+            Inputs.Add(Debt_Checkbox.IsChecked.ToString());
 
             inputEntered?.Invoke(this, EventArgs.Empty);
         }

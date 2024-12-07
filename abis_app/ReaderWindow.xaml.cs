@@ -43,7 +43,35 @@ namespace abis_app
             inputWindow.Focus();
         }
 
-        private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
+        private void Deactivate_Reader_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Reader_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = Reader_Table.SelectedItem;
+
+                //deactivate function
+                try
+                {
+                    ReaderTools.DeactivateReader(MainWindow.db, value.GradebookNum);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                //reset the datagrid
+                this.ReaderTableRefresh();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
+
+            ReaderTableRefresh();
+        }
+
+        /*private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Reader_Table.SelectedItems.Count > 0)
             {
@@ -67,7 +95,7 @@ namespace abis_app
             {
                 MessageBox.Show("No cell is selected ");
             }
-        }
+        }*/
 
         private void Edit_Reader_Button_Click(object sender, RoutedEventArgs e)
         {

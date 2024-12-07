@@ -26,7 +26,7 @@ namespace abis
             _db.SaveChanges();
         }
 
-        public static void DeleteReader(AbisContext _db, long _gradebookNum)
+        /*public static void DeleteReader(AbisContext _db, long _gradebookNum)
         {
             Reader reader = _db.Readers.Where(b => b.GradebookNum == _gradebookNum).FirstOrDefault();
 
@@ -35,11 +35,11 @@ namespace abis
                 _db.Readers.Remove(reader);
                 _db.SaveChanges();
             }
-        }
+        }*/
 
         public static void EditReader(AbisContext _db, long _gradebookNum, List<string> Inputs)
         {
-            Reader reader = _db.Readers.Where(r=>r.GradebookNum == _gradebookNum).FirstOrDefault();
+            Reader reader = _db.Readers.Find(_gradebookNum);
 
             if (reader != null)
             {
@@ -52,6 +52,29 @@ namespace abis
                 reader.Debt = bool.Parse(Inputs[7]);
 
                 _db.SaveChanges();
+            }
+        }
+
+        public static void DeactivateReader(AbisContext _db, int _gradebookNum)
+        {
+            Reader reader = _db.Readers.Find(_gradebookNum);
+
+            if (reader != null)
+            {
+                reader.Active = false;
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch
+                {
+                    reader.Active = true;
+                    throw new Exception("Failed to deactivatate a book");
+                }
+            }
+            else
+            {
+                throw new Exception("Failed to deactivate a book");
             }
         }
     }

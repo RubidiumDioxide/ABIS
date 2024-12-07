@@ -24,7 +24,8 @@
         
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
             <Button x:Name="Add_Reader_Button" Content="Добавить" Style="{StaticResource BookReaderButton_Style}" Click="Add_Reader_Button_Click"/>
-            <Button x:Name="Delete_Reader_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_Reader_Button_Click"/>
+            <!--Button x:Name="Delete_Reader_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_Reader_Button_Click"/-->
+            <Button x:Name="Deactivate_Reader_Button" Content="Снять с учета" Style="{StaticResource BookReaderButton_Style}" Click="Deactivate_Reader_Button_Click"/>
             <Button x:Name="Edit_Reader_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_Reader_Button_Click"/>
         </StackPanel>
        
@@ -41,7 +42,7 @@
             <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Долг</TextBox>
         </StackPanel>
         
-        <DataGrid x:Name="Reader_Table" AutoGenerateColumns="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="Reader_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
     </Grid>
 
 </Window>

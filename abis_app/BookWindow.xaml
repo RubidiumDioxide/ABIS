@@ -24,7 +24,8 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
              <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource BookButton_Style}" Click="Add_Book_Button_Click"/>
-            <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookButton_Style}" Click="Delete_Book_Button_Click"/>
+            <!--Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookButton_Style}" Click="Delete_Book_Button_Click"/-->
+            <Button x:Name="Deactivate_Book_Button" Content="Снять с учета" Style="{StaticResource BookButton_Style}" Click="Deactivate_Book_Button_Click"/>
             <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource BookButton_Style}" Click="Edit_Book_Button_Click"/>
         </StackPanel>
         

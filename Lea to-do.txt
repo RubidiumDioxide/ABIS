@@ -11,13 +11,15 @@ talk to kat and maybe rework the database a bit (on deleting books)
 do all the same (add/delete/edit) to readers table 				DONE
 resolve the thing with authors 							DONE
 	
-add the ability to add a readerbook entry 					UNTESTED
-add the ability to edit a readerbook entry (can edit date returned only) 	UNTESTED
-add basic try-catches to everything regarding alterations to database 		UNTESTED
+add the ability to add a readerbook entry 					DONE
+add the ability to edit a readerbook entry (can edit date returned only) 	DONE
+add basic try-catches to everything regarding alterations to database 		DONE(SOMEWHAT)
 tweak the max limit of characters for each textbox according to db scheme
-replace .where().firstordefault() with find()
-change true false textboxes to radiobuttons
-add restrictions: can't borrow an inactive book or a book with 0 quantity
-decrease/increase book quantity when borrowed/returned
+replace .where().firstordefault() with find() 					DONE
+change true false textboxes to radiobuttons 					DONE
+add restrictions: can't borrow an inactive book or a book with 0 quantity 	DONE	
+decrease/increase book quantity when borrowed/returned				DONE
 add serach reader 
-make it so that the dateborrowed field if filled automatically based on current date
+make it so that the dateborrowed field if filled automatically based on current date DONE
+
+ADD AN ID TO BOOKREADER 							DONE

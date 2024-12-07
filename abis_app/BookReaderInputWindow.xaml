@@ -17,9 +17,10 @@
     <StackPanel>
         <TextBox Name = "ReaderGradebookNum_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер зачетной книжки</TextBox>
         <TextBox Name = "BookIsbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">ISBN</TextBox>
-        <TextBox Name = "DateBorrowed_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата выдачи</TextBox>
+        <!--TextBox Name = "DateBorrowed_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата выдачи</TextBox>
         <TextBox Name = "DateReturned_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата возврата</TextBox>
-        <TextBox Name = "Returned_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Возвращено</TextBox>
+        <TextBox Name = "DateDeadline_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дедлайн</TextBox>
+        <TextBox Name = "Returned_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Возвращено</TextBox-->
         <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>
     </StackPanel>
 </Window>

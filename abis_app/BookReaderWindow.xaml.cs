@@ -43,7 +43,33 @@ namespace abis_app
             inputWindow.Show(); 
         }
 
-        private void Delete_BookReader_Button_Click(object sender, RoutedEventArgs e)
+        private void Close_BookReader_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (BookReader_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = BookReader_Table.SelectedItem;
+
+                //delete function
+                try
+                {
+                    BookReaderTools.CloseBookReader(MainWindow.db, value.Id);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                //reset the datagrid
+                this.BookReaderTableRefresh();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
+        }
+
+        /*private void Delete_BookReader_Button_Click(object sender, RoutedEventArgs e)
         {
             if (BookReader_Table.SelectedItems.Count > 0)
             {
@@ -68,9 +94,9 @@ namespace abis_app
             {
                 MessageBox.Show("No cell is selected ");
             }
-        }
+        }*/
 
-        private void Edit_BookReader_Button_Click(object sender, RoutedEventArgs e)
+        /*private void Edit_BookReader_Button_Click(object sender, RoutedEventArgs e)
         {
             if (BookReader_Table.SelectedItems.Count > 0)
             {
@@ -78,7 +104,7 @@ namespace abis_app
                 dynamic value = BookReader_Table.SelectedItem;
 
                 //edit 
-                inputWindow = new BookReaderInputWindow(MainWindow.db, "edit", value.BookIsbn, value.ReaderGradebookNum);
+                inputWindow = new BookReaderInputWindow(MainWindow.db, "edit", value.Id);
                 inputWindow.Owner = this;
                 inputWindow.inputEntered += new EventHandler(inputWindowEntered);
                 isInputWindowOpen = true;
@@ -88,9 +114,9 @@ namespace abis_app
             {
                 MessageBox.Show("No cell is selected ");
             }
-        }
+        }*/
 
-        private void Search_BookReader_Button_Click(object sender, RoutedEventArgs e)
+        /*private void Search_BookReader_Button_Click(object sender, RoutedEventArgs e)
         {
             this.BookReader_Table.ItemsSource = null;
 
@@ -109,7 +135,7 @@ namespace abis_app
             }
 
             BookReader_Table.ItemsSource = itemsSource;
-        }
+        }*/
 
         void inputWindowEntered(object sender, EventArgs e)
         {
@@ -119,23 +145,23 @@ namespace abis_app
                 {
                     BookReaderTools.AddBookReader(MainWindow.db, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to add a BookReader");
+                    MessageBox.Show(ex.Message);
                 }
             }
             if (inputWindow.type == "edit")
             {
                 try
                 {
-                    BookReaderTools.EditBookReader(MainWindow.db, inputWindow.bookIsbn, inputWindow.readerGradebookNum, inputWindow.Inputs);
+                    BookReaderTools.EditBookReader(MainWindow.db, inputWindow.id, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to edit a BookReader");
+                    MessageBox.Show(ex.Message);
                 }
             }
-
+            
             BookReaderTableRefresh();
             inputWindow.Close();
         }
@@ -170,7 +196,7 @@ namespace abis_app
         {
             MainWindow.db.BookReaders.Load();
             this.BookReader_Table.ItemsSource = null;
-            this.BookReader_Table.ItemsSource = MainWindow.db.BookReaders.Local.ToBindingList().Select(c => new { c.ReaderGradebookNum, c.BookIsbn, c.DateBorrowed, c.DateReturned, c.DateDeadline, c.Returned });
+            this.BookReader_Table.ItemsSource = MainWindow.db.BookReaders.Local.ToBindingList().Select(c => new { c.Id, c.ReaderGradebookNum, c.BookIsbn, c.DateBorrowed, c.DateReturned, c.DateDeadline, c.Returned });
         }
     }
 }

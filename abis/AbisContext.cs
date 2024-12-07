@@ -73,10 +73,9 @@ public partial class AbisContext : DbContext
 
         modelBuilder.Entity<BookReader>(entity =>
         {
-            entity.HasKey(e => new { e.ReaderGradebookNum, e.BookIsbn });
-
             entity.ToTable("Book_Reader");
 
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.BookIsbn).HasColumnName("BookISBN");
 
             entity.HasOne(d => d.BookIsbnNavigation).WithMany(p => p.BookReaders)

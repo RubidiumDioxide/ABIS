@@ -37,7 +37,7 @@ namespace abis_app
 
                 InitializeComponent();
 
-                Book book = db.Books.Where(b => b.Isbn == isbn).FirstOrDefault();
+                Book book = db.Books.Find(isbn);
 
                 ISBN_Textbox.Text = book.Isbn.ToString();
                 Title_Textbox.Text = book.Title.ToString();
@@ -47,7 +47,7 @@ namespace abis_app
                 YearPublished_Textbox.Text = book.YearPublished.ToString();
                 Description_Textbox.Text = book.Description.ToString();
                 Quantity_Textbox.Text = book.Quantity.ToString();
-                Active_Textbox.Text = book.Active.ToString(); 
+                Active_Checkbox.IsChecked = book.Active; 
 
                 ISBN_Textbox.IsEnabled = false;
             }
@@ -72,6 +72,8 @@ namespace abis_app
             {
                 Inputs.Add(t.Text);
             }
+
+            Inputs.Add(Active_Checkbox.IsChecked.ToString());
 
             inputEntered?.Invoke(this, EventArgs.Empty);
         }

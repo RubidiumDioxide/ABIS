@@ -5,6 +5,8 @@ namespace abis;
 
 public partial class BookReader
 {
+    public long Id { get; set; }
+
     public int ReaderGradebookNum { get; set; }
 
     public long BookIsbn { get; set; }

@@ -45,21 +45,21 @@ namespace abis_app
             inputWindow.Focus();
         }
 
-        private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
+        private void Deactivate_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Book_Table.SelectedItems.Count > 0)
             {
                 //get isbn of the selected row 
                 dynamic value = Book_Table.SelectedItem;
 
-                //delete function
+                //deactivate function
                 try
                 {
-                    BookTools.DeleteBook(MainWindow.db, value.Isbn);
+                    BookTools.DeactivateBook(MainWindow.db, value.Isbn);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to delete a Book");
+                    MessageBox.Show(ex.Message);
                 }
 
                 //reset the datagrid
@@ -69,7 +69,35 @@ namespace abis_app
             {
                 MessageBox.Show("No cell is selected ");
             }
+
+            BookTableRefresh();
         }
+
+        /*private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Book_Table.SelectedItems.Count > 0)
+            {
+                //get isbn of the selected row 
+                dynamic value = Book_Table.SelectedItem;
+
+                //delete function
+                try
+                {
+                    BookTools.DeleteBook(MainWindow.db, value.Isbn); 
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                //reset the datagrid
+                this.BookTableRefresh();
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
+        }*/
 
         private void Edit_Book_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -128,9 +156,9 @@ namespace abis_app
                 {
                     BookTools.AddBook(MainWindow.db, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to add a Book");
+                    MessageBox.Show(ex.Message);
                 }
             }
             if (inputWindow.type == "edit")
@@ -139,9 +167,9 @@ namespace abis_app
                 {
                     BookTools.EditBook(MainWindow.db, inputWindow.isbn, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to edit a Book");
+                    MessageBox.Show(ex.Message);
                 }
             }
 
@@ -172,6 +200,13 @@ namespace abis_app
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            BookTableRefresh();
         }
 
         public void BookTableRefresh()
