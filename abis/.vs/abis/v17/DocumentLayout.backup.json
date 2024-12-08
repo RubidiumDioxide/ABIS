@@ -3,25 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis\\bookreadertools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|solutionrelative:bookreadertools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\bookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis\\booktools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|solutionrelative:booktools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\bookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis\\readertools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|solutionrelative:readertools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\readerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\readerinputwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\readerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\bookinputwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis_app\\readerinputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|c:\\users\\user\\storage\\courses\\\u0432\u0432\u0438\u043F\\abis\\abis\\reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB3956C-E9D5-4DE0-989F-DEE206BF50DB}|abis.csproj|solutionrelative:reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,78 +35,69 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookReaderTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\BookReaderTools.cs",
-              "RelativeDocumentMoniker": "BookReaderTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\BookReaderTools.cs",
-              "RelativeToolTip": "BookReaderTools.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "BookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookWindow.xaml.cs",
+              "RelativeToolTip": "..\\abis_app\\BookWindow.xaml.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAIwKoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:44:38.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReaderTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\ReaderTools.cs",
-              "RelativeDocumentMoniker": "ReaderTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\ReaderTools.cs",
-              "RelativeToolTip": "ReaderTools.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAApwB4AAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:43:39.124Z",
+              "WhenOpened": "2024-12-08T12:17:37.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ReaderInputWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderInputWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\abis_app\\ReaderInputWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderInputWindow.xaml.cs",
-              "RelativeToolTip": "..\\abis_app\\ReaderInputWindow.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwCYAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:43:24.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\BookTools.cs",
-              "RelativeDocumentMoniker": "BookTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\BookTools.cs",
-              "RelativeToolTip": "BookTools.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:42:32.509Z",
+              "Title": "ReaderWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\ReaderWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\ReaderWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-08T11:58:46.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "BookInputWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookInputWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\abis_app\\BookInputWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookInputWindow.xaml.cs",
-              "RelativeToolTip": "..\\abis_app\\BookInputWindow.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "Title": "Reader.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\Reader.cs",
+              "RelativeDocumentMoniker": "Reader.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis\\Reader.cs",
+              "RelativeToolTip": "Reader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T18:37:07.128Z",
+              "WhenOpened": "2024-12-08T11:42:43.585Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 191,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReaderWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\abis_app\\ReaderWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderWindow.xaml.cs",
+              "RelativeToolTip": "..\\abis_app\\ReaderWindow.xaml.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAUwKgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T11:38:57.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReaderInputWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderInputWindow.xaml",
-              "RelativeDocumentMoniker": "..\\abis_app\\ReaderInputWindow.xaml",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\ReaderInputWindow.xaml",
-              "RelativeToolTip": "..\\abis_app\\ReaderInputWindow.xaml",
+              "DocumentIndex": 1,
+              "Title": "BookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u0432\u0432\u0438\u043F\\ABIS\\abis_app\\BookWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\BookWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-07T18:23:27.479Z",
+              "WhenOpened": "2024-12-08T12:33:33.845Z",
               "EditorCaption": ""
             }
           ]

@@ -34,8 +34,9 @@
         <Button x:Name="Search_Book_Button" Content="Поиск" Style="{StaticResource BookButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Book_Button_Click"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
             <TextBox Name ="Isbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">ISBN</TextBox>
-            <TextBox Name="Title_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">Название книги</TextBox>
+            <TextBox Name="Title_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">Название книги</TextBox>
             <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">Год</TextBox>
+            <CheckBox Name="Active_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}">На учете</CheckBox>
         </StackPanel>
 
         <DataGrid Name="Book_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

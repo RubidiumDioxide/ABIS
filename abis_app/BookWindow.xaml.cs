@@ -126,23 +126,44 @@ namespace abis_app
 
             var itemsSource = MainWindow.db.Books.Local.ToBindingList().Select(c => new { c.Isbn, c.Title, c.Author, c.Pages, c.PublishingHouse, c.YearPublished, c.Description, c.Quantity, c.Active });
 
-            if (Isbn_Textbox.Text != "")
+            if (Isbn_Textbox.Text != "" && Isbn_Textbox.Text != "ISBN") 
             {
-                long isbn = long.Parse(Isbn_Textbox.Text);
-                itemsSource = itemsSource.Where(c => c.Isbn == isbn);
+                try
+                {
+                    long isbn = long.Parse(Isbn_Textbox.Text);
+                    itemsSource = itemsSource.Where(c => c.Isbn == isbn);
+                }
+                catch { }
             }
 
-            if (Title_Textbox.Text != "")
+            if (Title_Textbox.Text != "" && Title_Textbox.Text != "Название книги")
             {
-                string title = Title_Textbox.Text;
-                itemsSource = itemsSource.Where(c => c.Title == title);
+                try
+                {
+                    string title = Title_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.Title == title);
+                }
+                catch { }
             }
 
-
-            if (YearPublished_Textbox.Text != "")
+            if (YearPublished_Textbox.Text != "" && YearPublished_Textbox.Text != "Год")
             {
-                int year_published = int.Parse(YearPublished_Textbox.Text);
-                itemsSource = itemsSource.Where(c => c.YearPublished == year_published);
+                try
+                {
+                    int year_published = int.Parse(YearPublished_Textbox.Text);
+                    itemsSource = itemsSource.Where(c => c.YearPublished == year_published);
+                }
+                catch { }
+            }
+            
+            if (Active_Checkbox.IsChecked != null)
+            {
+                try
+                {
+                    bool? active = Active_Checkbox.IsChecked; 
+                    itemsSource = itemsSource.Where(c => c.Active == active);
+                }
+                catch { }
             }
 
             Book_Table.ItemsSource = itemsSource;

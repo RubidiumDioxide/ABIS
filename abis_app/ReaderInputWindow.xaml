@@ -14,13 +14,11 @@
     </Window.Background>
     <StackPanel>
         <TextBox Name = "GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер зачетной книжки</TextBox>
-        <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Фамилия</TextBox>
-        <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Имя</TextBox>
-        <TextBox Name="LastName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Отчество</TextBox>
+        <TextBox Name="Surname_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Фамилия</TextBox>
+        <TextBox Name="FirstName_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Имя</TextBox>
+        <TextBox Name="LastName_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Отчество</TextBox>
         <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер группы</TextBox>
-        <TextBox Name="DateOfBirth_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата рождения</TextBox>
-        <!--TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Действителен</TextBox>
-        <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Долг</TextBox-->
+        <TextBox Name="DateOfBirth_Textbox" MaxLength="11" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата рождения</TextBox>
         <CheckBox x:Name="Active_Checkbox" Height="20" Content="Active" IsThreeState="False" IsChecked="True"/>
         <CheckBox x:Name="Debt_Checkbox" Height="20" Content="Задолженность" IsThreeState="False" IsChecked="False"/>
         <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>

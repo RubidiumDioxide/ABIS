@@ -34,12 +34,15 @@
         <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click"/>
         
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox Name="GradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}" Foreground="#FF1A4D7B" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF1A4D7B">Номер зачетки</TextBox>
-            <TextBox Name="Surname_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия</TextBox>
-            <TextBox Name="FirstName_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Имя</TextBox>
-            <TextBox Name="GroupNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер группы</TextBox>
-            <TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Действителен</TextBox>
-            <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Долг</TextBox>
+            <TextBox Name="GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетки</TextBox>
+            <TextBox Name="Surname_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия</TextBox>
+            <TextBox Name="FirstName_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Имя</TextBox>
+            <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер группы</TextBox>
+            <!--TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Действителен</TextBox>
+            <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Долг</TextBox-->
+            <CheckBox Name="Active_Checkbox" IsThreeState="True" IsChecked ="{x:Null}">Дествителен</CheckBox>
+            <CheckBox Name="Debt_Checkbox" IsThreeState="True" IsChecked ="{x:Null}">Задолженность</CheckBox>
+
         </StackPanel>
         
         <DataGrid x:Name="Reader_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

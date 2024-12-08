@@ -120,7 +120,72 @@ namespace abis_app
 
         private void Search_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Placeholder", "Performs search & alters the selection shown");
+            this.Reader_Table.ItemsSource = null;
+
+            var itemsSource = MainWindow.db.Readers.Local.ToBindingList().Select(c => new { c.GradebookNum, c.Surname, c.FirstName, c.LastName, c.GroupNum, c.DateOfBirth, c.Active, c.Debt });
+
+            if (GradebookNum_Textbox.Text != "" && GradebookNum_Textbox.Text != "Номер зачетки") 
+            {
+                try
+                {
+                    int gradebookNum = int.Parse(GradebookNum_Textbox.Text);
+                    itemsSource = itemsSource.Where(c => c.GradebookNum == gradebookNum);
+                }
+                catch { }
+            }
+
+            if (Surname_Textbox.Text != "" && Surname_Textbox.Text != "Фамилия")
+            {
+                try
+                {
+                    string surname = Surname_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.Surname == surname);
+                }
+                catch { } 
+            }
+
+
+            if (FirstName_Textbox.Text != "" && FirstName_Textbox.Text != "Имя")
+            {
+                try
+                {
+                    string firstName = FirstName_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.FirstName == firstName);
+                }
+                catch { } 
+            }
+
+            if (GroupNum_Textbox.Text != "" && GroupNum_Textbox.Text != "Номер группы")
+            {
+                try
+                {
+                    int groupNum = int.Parse(GroupNum_Textbox.Text);
+                    itemsSource = itemsSource.Where(c => c.GroupNum == groupNum);
+                }
+                catch { } 
+            }
+
+            if (Active_Checkbox.IsChecked != null)
+            {
+                try
+                {
+                    bool? active = Active_Checkbox.IsChecked;
+                    itemsSource = itemsSource.Where(c => c.Active == active);
+                }
+                catch { } 
+            }
+
+            if (Debt_Checkbox.IsChecked != null)
+            {
+                try
+                {
+                    bool? debt = Debt_Checkbox.IsChecked;
+                    itemsSource = itemsSource.Where(c => c.Debt == debt);
+                }
+                catch { } 
+            }
+
+            Reader_Table.ItemsSource = itemsSource;
         }
 
         void inputWindowEntered(object sender, EventArgs e)

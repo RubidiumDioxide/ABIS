@@ -15,7 +15,7 @@
     </Window.Background>
     
     <StackPanel>
-        <TextBox Name = "ReaderGradebookNum_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер зачетной книжки</TextBox>
+        <TextBox Name = "ReaderGradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер зачетной книжки</TextBox>
         <TextBox Name = "BookIsbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">ISBN</TextBox>
         <!--TextBox Name = "DateBorrowed_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата выдачи</TextBox>
         <TextBox Name = "DateReturned_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата возврата</TextBox>

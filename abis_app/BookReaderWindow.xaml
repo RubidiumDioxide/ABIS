@@ -35,9 +35,9 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
             <TextBox Name="BookIsbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
-            <TextBox Name="ReaderGradebookNum_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
-            <TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox>
+            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox-->
+            <TextBox Name="ReaderGradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
+            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox-->
         </StackPanel>
 
         <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
