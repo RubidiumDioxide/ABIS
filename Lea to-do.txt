@@ -23,7 +23,10 @@ make it so that the dateborrowed field if filled automatically based on current 
 
 ADD AN ID TO BOOKREADER 							DONE
 add serach reader 								DONE
-add try-catches to searches
-make the starting size of all windows the quarter of the screen (or minimized)
+add try-catches to searches							DONE
+make the starting size of all windows the quarter of the screen (or minimized) 	DONE
+Make a join thing to dispplay surname of the reader and the title of the book in the bookreader table 								DONE 
 
-Make a join thing to dispplay surname of the reader and the title of the book in the bookreader table
+Add main functionality to BookHistoryWindow 
+Add main Functionality to ReaderHistoryWindow 
+Add login window as the starting window and make a table with employee info 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="BookReaderWindow" WindowState="Maximized" Background="#C5B79A">
+        Title="BookReaderWindow" Height="450" Width="800" Background="#C5B79A">
 
     <Window.Resources>
     </Window.Resources>
@@ -40,7 +40,7 @@
             <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox-->
         </StackPanel>
 
-        <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
     </Grid>
 
 </Window>

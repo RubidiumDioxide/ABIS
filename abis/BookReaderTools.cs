@@ -1,4 +1,5 @@
-﻿/*using System;
+﻿using Microsoft.EntityFrameworkCore;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -109,6 +110,55 @@ namespace abis
             {
                 throw new Exception("failed to edit a BookReader");
             }
+        }
+
+
+        public class BookReader_ViewModel
+        {
+            public long Id { get; set; }
+            public int GradebookNum { get; set; }
+            public string Surname { get; set; } = null;
+            public long Isbn { get; set; }
+            public string Title { get; set; } = null;
+            public DateOnly DateBorrowed { get; set; }
+            public DateOnly? DateReturned { get; set; }
+            public DateOnly DateDeadline { get; set; } 
+            public bool Returned { get; set; }
+
+            public List<string> GetValues()
+            {
+                List<string> l = new List<string> { Id.ToString(), GradebookNum.ToString(), Surname, Isbn.ToString(), Title, DateBorrowed.ToString(), DateReturned.ToString(), DateDeadline.ToString(), Returned.ToString()  };
+                return l;
+            }
+        }
+        public static List<BookReader_ViewModel> LoadTable(AbisContext db)
+        {
+            db.BookReaders.Load();
+            db.Books.Load();
+            db.Readers.Load();
+
+            return db.BookReaders.Join(db.Readers, br => br.ReaderGradebookNum, r => r.GradebookNum, (br, r) => new
+            {
+                Id = br.Id,
+                GradebookNum = br.ReaderGradebookNum,
+                Surname = r.Surname,
+                Isbn = br.BookIsbn,
+                DateBorrowed = br.DateBorrowed,
+                DateReturned = br.DateReturned,
+                DateDeadline = br.DateDeadline,
+                Returned = br.Returned
+            }).Join(db.Books, t => t.Isbn, b => b.Isbn, (t, b) => new BookReader_ViewModel
+            {
+                Id = t.Id,
+                GradebookNum = t.GradebookNum,
+                Surname = t.Surname,
+                Isbn = t.Isbn,
+                Title = b.Title,
+                DateBorrowed = t.DateBorrowed,
+                DateReturned = t.DateReturned,
+                DateDeadline = t.DateDeadline,
+                Returned = t.Returned
+            }).ToList();
         }
     }
 }

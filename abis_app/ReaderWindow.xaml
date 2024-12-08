@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="ReaderWindow" WindowState="Maximized" Background="#D8F1B6">
+        Title="ReaderWindow" Height="450" Width="800" Background="#D8F1B6">
 
     <Window.Resources>
     </Window.Resources>

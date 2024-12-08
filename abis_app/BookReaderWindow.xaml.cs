@@ -194,9 +194,8 @@ namespace abis_app
 
         private void BookReaderTableRefresh()
         {
-            MainWindow.db.BookReaders.Load();
             this.BookReader_Table.ItemsSource = null;
-            this.BookReader_Table.ItemsSource = MainWindow.db.BookReaders.Local.ToBindingList().Select(c => new { c.Id, c.ReaderGradebookNum, c.BookIsbn, c.DateBorrowed, c.DateReturned, c.DateDeadline, c.Returned });
+            this.BookReader_Table.ItemsSource = BookReaderTools.LoadTable(MainWindow.db);
         }
     }
 }
