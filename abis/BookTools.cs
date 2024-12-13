@@ -6,6 +6,9 @@ using System.Threading.Tasks;*/
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System;
+using static System.Collections.Specialized.BitVector32;
+using System;
 
 namespace abis
 {
@@ -31,11 +34,12 @@ namespace abis
             {
                 _db.SaveChanges();
             }
-            catch
+            catch(Exception ex)
             {
                 _db.Books.Remove(book);
-                throw new Exception("Failed to add a book");
+                throw new Exception(ex.Message);
             }
+            BookHistoryTools.AddBookHistory(_db, new List<string> { book.Isbn.ToString(), book.Quantity.ToString(), "Добавление" });
         }
 
         /*public static void DeleteBook(AbisContext _db, long _isbn)
@@ -64,7 +68,7 @@ namespace abis
         public static void EditBook(AbisContext _db, long _isbn, List<string> Inputs)
         {
             Book book = _db.Books.Find(_isbn);
-            Book book_reserve = book;
+            Book book_reserve = new Book(book);
 
             if (book != null)
             {
@@ -85,12 +89,21 @@ namespace abis
                 {
                     book = book_reserve;
                     book_reserve = null;
-                    throw new Exception("Failed to edit a BookReader");
+                    throw new Exception("Failed to edit a Book");
                 }
             }
             else
             {
-                throw new Exception("Failed to edit a BookReader");
+                throw new Exception("Failed to edit a Book");
+            }
+
+            if (book.Quantity > book_reserve.Quantity)
+            {
+                BookHistoryTools.AddBookHistory(_db, new List<string> { book.Isbn.ToString(), (Math.Abs(book.Quantity-book_reserve.Quantity)).ToString(), "Добавление" });
+            }   
+            if (book.Quantity < book_reserve.Quantity)
+            {
+                BookHistoryTools.AddBookHistory(_db, new List<string> { book.Isbn.ToString(), (Math.Abs(book.Quantity - book_reserve.Quantity)).ToString(), "Удаление" });
             }
         }
 

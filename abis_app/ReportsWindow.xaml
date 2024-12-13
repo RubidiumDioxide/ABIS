@@ -15,8 +15,25 @@
 
     <Window.Resources>
     </Window.Resources>
-    <StackPanel>
-        <Button x:Name="Book_Reports_Button" Content="Отчеты по поставкам книг" Style="{StaticResource MainWindowButton_Style}" Grid.Row="1" Grid.Column="2" Click="Reports_Book_Button_Click"/>
-    </StackPanel>
 
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+            <Button x:Name="BookHistory_Button" Content="История поступлений книг" Style="{StaticResource BookButton_Style}" Click="BookHistory_Button_Click"/>
+            <Button x:Name="ReaderHistory_Button" Content="История учета читателей" Style="{StaticResource BookButton_Style}" Click="ReaderHistory_Button_Click"/>
+        </StackPanel>
+
+        <DataGrid Name="Reports_Table" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" Grid.Row="0" Grid.Column="1"/>
+    </Grid>
 </Window>

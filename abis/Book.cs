@@ -23,7 +23,23 @@ public partial class Book
 
     public bool Active { get; set; }
 
-    public virtual BookHistory? BookHistory { get; set; }
+    public virtual ICollection<BookHistory> BookHistories { get; set; } = new List<BookHistory>();
 
     public virtual ICollection<BookReader> BookReaders { get; set; } = new List<BookReader>();
+
+    public Book() { } 
+
+    public Book(Book book)
+    {
+        Isbn = book.Isbn;
+        Title = book.Title;
+        Author = book.Author;
+        Pages = book.Pages;
+        PublishingHouse = book.PublishingHouse;
+        YearPublished = book.YearPublished;
+        Description = book.Description;
+        Quantity = book.Quantity;
+        Active = book.Active;
+    }
+    
 }

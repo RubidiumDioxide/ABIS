@@ -9,6 +9,8 @@ public partial class BookHistory
 
     public long BookIsbn { get; set; }
 
+    public byte Quantity { get; set; }
+
     public string Action { get; set; } = null!;
 
     public DateOnly Date { get; set; }

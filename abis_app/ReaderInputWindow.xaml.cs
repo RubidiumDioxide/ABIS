@@ -25,9 +25,9 @@ namespace abis_app
         public List<String> Inputs;
         public event EventHandler inputEntered;
         public string type = "";
-        public long gradebookNum = 00000;
+        public int gradebookNum = 00000;
 
-        public ReaderInputWindow(AbisContext db, string _type, long _gradebookNum)
+        public ReaderInputWindow(AbisContext db, string _type, int _gradebookNum)
         {
             type = _type;
             gradebookNum = _gradebookNum;

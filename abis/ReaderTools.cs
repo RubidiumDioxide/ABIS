@@ -23,10 +23,20 @@ namespace abis
             };
 
             _db.Readers.Add(reader);
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                _db.Readers.Remove(reader);
+                throw new Exception(ex.Message);
+            }
+            ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Добавление" });
         }
+        
 
-        /*public static void DeleteReader(AbisContext _db, long _gradebookNum)
+/*public static void DeleteReader(AbisContext _db, long _gradebookNum)
         {
             Reader reader = _db.Readers.Where(b => b.GradebookNum == _gradebookNum).FirstOrDefault();
 
@@ -37,9 +47,10 @@ namespace abis
             }
         }*/
 
-        public static void EditReader(AbisContext _db, long _gradebookNum, List<string> Inputs)
+        public static void EditReader(AbisContext _db, int _gradebookNum, List<string> Inputs)
         {
             Reader reader = _db.Readers.Find(_gradebookNum);
+            Reader reader_reserve = new Reader(reader);
 
             if (reader != null)
             {
@@ -51,7 +62,29 @@ namespace abis
                 reader.Active = bool.Parse(Inputs[6]);
                 reader.Debt = bool.Parse(Inputs[7]);
 
-                _db.SaveChanges();
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch
+                {
+                    reader = reader_reserve;
+                    reader_reserve = null;
+                    throw new Exception("Failed to edit a reader");
+                }
+            }
+            else
+            {
+                throw new Exception("Failed to edit a reader");
+            }
+
+            if (reader.Active == false && reader_reserve.Active == true)
+            {
+                ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Деактивирован" });
+            }
+            if (reader.Active == true && reader_reserve.Active == false)
+            {
+                ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Активирован" });
             }
         }
 
@@ -59,23 +92,25 @@ namespace abis
         {
             Reader reader = _db.Readers.Find(_gradebookNum);
 
-            if (reader != null)
+            if (reader != null && reader.Active == true)
             {
-                reader.Active = false;
-                try
-                {
-                    _db.SaveChanges();
-                }
-                catch
-                {
-                    reader.Active = true;
-                    throw new Exception("Failed to deactivatate a book");
-                }
+                    reader.Active = false;
+                    try
+                    {
+                        _db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        reader.Active = true;
+                        throw new Exception(ex.Message);
+                    }
             }
             else
             {
                 throw new Exception("Failed to deactivate a book");
             }
+
+            ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Деактивирован" });
         }
     }
 }

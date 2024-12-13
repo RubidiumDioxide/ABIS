@@ -1,5 +1,4 @@
 USE abis
-GO 
 
 CREATE TABLE [Book] (
 	[ISBN] bigint NOT NULL,
@@ -10,11 +9,10 @@ CREATE TABLE [Book] (
 	[YearPublished] smallint NOT NULL, 
 	[Description] nvarchar (500) NULL,
 	[Quantity] tinyint NOT NULL,
-	active bit NOT NULL,
+	[Active] bit NOT NULL,
 
 	CONSTRAINT [PK_Book] PRIMARY KEY ([ISBN]) 
 ) 
-GO 
 
 CREATE TABLE [Reader] (
 	[GradebookNum] int NOT NULL,
@@ -28,7 +26,6 @@ CREATE TABLE [Reader] (
 
 	CONSTRAINT [PK_Reader] PRIMARY KEY ([GradebookNum])
 )
-GO
 
 CREATE TABLE [Book_Reader] (
 	[ID] bigint IDENTITY, 
@@ -41,27 +38,25 @@ CREATE TABLE [Book_Reader] (
 
 	CONSTRAINT [PK_Book_Reader] PRIMARY KEY ([ID])
 )
-GO
 
 CREATE TABLE [BookHistory](
-	[OperationID] bigint NOT NULL,
+	[OperationID] bigint IDENTITY NOT NULL,
 	[BookISBN] bigint NOT NULL,
+	[Quantity] tinyint NOT NULL CHECK (Quantity > 0),
 	[Action] varchar(20) NOT NULL,
 	[Date] date NOT NULL
 
-	CONSTRAINT [PK_BookHistory] PRIMARY KEY ([BookISBN])
+	CONSTRAINT [PK_BookHistory] PRIMARY KEY ([OperationID])
 )
-GO
 
 CREATE TABLE [ReaderHistory](
-	[OperationID] bigint NOT NULL,
+	[OperationID] bigint IDENTITY NOT NULL,
 	[ReaderGradebookNum] int NOT NULL,
-	[Action] varchar(20) NOT NULL,
+	[Action] varchar(20) NOT NULL, 
 	[Date] date NOT NULL
 
-	CONSTRAINT [PK_ReaderHistory] PRIMARY KEY ([ReaderGradebookNum])
+	CONSTRAINT [PK_ReaderHistory] PRIMARY KEY ([OperationID])
 )
-GO
 
 ALTER TABLE [Book] 
 	ADD
@@ -69,49 +64,37 @@ ALTER TABLE [Book]
 		CONSTRAINT [Unsigned_Pages] CHECK ([Pages] > 0),
 		CONSTRAINT [Format_YearPublished] CHECK (([YearPublished] > 0) and ([YearPublished] <= YEAR(GETDATE()))),
 		CONSTRAINT [Unsigned_Quantity] CHECK ([Quantity] >= 0)
-GO
 
 ALTER TABLE [Reader]
 	ADD 
 		CONSTRAINT [Format_GroupNum] CHECK (([GroupNum] > 1000) and ([GroupNum] < 10000))
-GO
 
 ALTER TABLE [Book_Reader]
 	ADD 
 		CONSTRAINT [FK_Reader-Book_Reader] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]),
 		CONSTRAINT [FK_Book-Book_Reader] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]),
 		CONSTRAINT [Dates] CHECK (([DateBorrowed] <= [DateReturned]) and ([DateBorrowed] <= [DateDeadline]))
-GO
 
 ALTER TABLE [BookHistory]
 	ADD
-		CONSTRAINT [FK_Book-BookHistory] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]),
-		CONSTRAINT [IN_BookHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) 
-GO
+		CONSTRAINT [FK_Book-BookHistory1] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN])
+		/*CONSTRAINT [IN_BookHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) */
 
 ALTER TABLE [ReaderHistory]
 	ADD
-		CONSTRAINT [FK_Reader-ReaderHistory] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]),
-		CONSTRAINT [IN_ReaderHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) 
-GO
+		CONSTRAINT [FK_Reader-ReaderHistory] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum])
+		/*CONSTRAINT [IN_ReaderHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) */
 
 CREATE INDEX [Book_Title_Ind] 
 	ON [Book] ([Title])
-GO
 
 CREATE INDEX [Book_Qauntity_Ind]
 	ON [Book] ([Quantity]) 
-GO
 
 CREATE INDEX [Reader_Surname_Ind] 
 	ON [Reader] ([Surname])
-GO
 
 CREATE INDEX [Reader_GroupNum_Ind]
 	ON [Reader] ([GroupNum]) 
-GO
 
-USE abis
-GO
-SELECT * FROM [Book]
 GO

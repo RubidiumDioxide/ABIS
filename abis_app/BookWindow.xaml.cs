@@ -42,7 +42,7 @@ namespace abis_app
             inputWindow.inputEntered += new EventHandler(inputWindowEntered);
             isInputWindowOpen = true;
             inputWindow.Show();
-            inputWindow.Focus();
+            inputWindow.Focus(); 
         }
 
         private void Deactivate_Book_Button_Click(object sender, RoutedEventArgs e)

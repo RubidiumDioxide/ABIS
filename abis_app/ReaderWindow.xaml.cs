@@ -196,9 +196,9 @@ namespace abis_app
                 {
                     ReaderTools.AddReader(MainWindow.db, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to add a Reader");
+                    MessageBox.Show(ex.Message);
                 }
             }
             if (inputWindow.type == "edit")
@@ -207,9 +207,9 @@ namespace abis_app
                 {
                     ReaderTools.EditReader(MainWindow.db, inputWindow.gradebookNum, inputWindow.Inputs);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to edit a Reader");
+                    MessageBox.Show(ex.Message);
                 }
             }
 

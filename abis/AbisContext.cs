@@ -44,7 +44,6 @@ public partial class AbisContext : DbContext
             entity.Property(e => e.Isbn)
                 .ValueGeneratedNever()
                 .HasColumnName("ISBN");
-            entity.Property(e => e.Active).HasColumnName("active");
             entity.Property(e => e.Author).HasMaxLength(200);
             entity.Property(e => e.Description).HasMaxLength(500);
             entity.Property(e => e.PublishingHouse).HasMaxLength(200);
@@ -53,22 +52,20 @@ public partial class AbisContext : DbContext
 
         modelBuilder.Entity<BookHistory>(entity =>
         {
-            entity.HasKey(e => e.BookIsbn);
+            entity.HasKey(e => e.OperationId);
 
             entity.ToTable("BookHistory");
 
-            entity.Property(e => e.BookIsbn)
-                .ValueGeneratedNever()
-                .HasColumnName("BookISBN");
+            entity.Property(e => e.OperationId).HasColumnName("OperationID");
             entity.Property(e => e.Action)
                 .HasMaxLength(20)
                 .IsUnicode(false);
-            entity.Property(e => e.OperationId).HasColumnName("OperationID");
+            entity.Property(e => e.BookIsbn).HasColumnName("BookISBN");
 
-            entity.HasOne(d => d.BookIsbnNavigation).WithOne(p => p.BookHistory)
-                .HasForeignKey<BookHistory>(d => d.BookIsbn)
+            entity.HasOne(d => d.BookIsbnNavigation).WithMany(p => p.BookHistories)
+                .HasForeignKey(d => d.BookIsbn)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Book-BookHistory");
+                .HasConstraintName("FK_Book-BookHistory1");
         });
 
         modelBuilder.Entity<BookReader>(entity =>
@@ -108,18 +105,17 @@ public partial class AbisContext : DbContext
 
         modelBuilder.Entity<ReaderHistory>(entity =>
         {
-            entity.HasKey(e => e.ReaderGradebookNum);
+            entity.HasKey(e => e.OperationId);
 
             entity.ToTable("ReaderHistory");
 
-            entity.Property(e => e.ReaderGradebookNum).ValueGeneratedNever();
+            entity.Property(e => e.OperationId).HasColumnName("OperationID");
             entity.Property(e => e.Action)
                 .HasMaxLength(20)
                 .IsUnicode(false);
-            entity.Property(e => e.OperationId).HasColumnName("OperationID");
 
-            entity.HasOne(d => d.ReaderGradebookNumNavigation).WithOne(p => p.ReaderHistory)
-                .HasForeignKey<ReaderHistory>(d => d.ReaderGradebookNum)
+            entity.HasOne(d => d.ReaderGradebookNumNavigation).WithMany(p => p.ReaderHistories)
+                .HasForeignKey(d => d.ReaderGradebookNum)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Reader-ReaderHistory");
         });

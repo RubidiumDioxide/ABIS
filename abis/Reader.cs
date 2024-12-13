@@ -23,5 +23,19 @@ public partial class Reader
 
     public virtual ICollection<BookReader> BookReaders { get; set; } = new List<BookReader>();
 
-    public virtual ReaderHistory? ReaderHistory { get; set; }
+    public virtual ICollection<ReaderHistory> ReaderHistories { get; set; } = new List<ReaderHistory>();
+
+    public Reader() { }
+
+    public Reader(Reader reader)
+    {
+        GradebookNum = reader.GradebookNum;
+        Surname = reader.Surname;
+        FirstName = reader.FirstName;
+        LastName = reader.LastName;
+        GroupNum = reader.GroupNum;
+        DateOfBirth = reader.DateOfBirth;
+        Active = reader.Active;
+        Debt = reader.Debt;
+    }
 }
