@@ -55,7 +55,10 @@ namespace abis_app
         {
             try
             {
-                this.connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
+                //lea
+                //this.connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
+                //kat
+                this.connectionString = "Server=LAPTOP-FAIVFFI6\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
                 db = new AbisContext(connectionString);
                 db.Books.Load();
                 db.Readers.Load();
