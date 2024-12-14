@@ -31,13 +31,14 @@
 
         <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}" >Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
 
-        <!--Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_BookReader_Button_Click"/-->
+        <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_BookReader_Button_Click"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox Name="BookIsbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
-            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox-->
-            <TextBox Name="ReaderGradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
-            <!--TextBox MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox-->
+            <TextBox Name="Isbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
+            <TextBox Name="Title_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
+            <TextBox Name="GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
+            <TextBox Name="Surname_Textbox"  MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox>
+            <CheckBox Name="Returned_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}">Возвращено</CheckBox>
         </StackPanel>
 
         <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

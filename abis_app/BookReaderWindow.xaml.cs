@@ -26,7 +26,7 @@ namespace abis_app
     {
         private BookReaderInputWindow inputWindow;
         private bool isInputWindowOpen = false;
-        private Dictionary<string, bool> lmc = new Dictionary<string, bool>() { { "BookIsbn_Textbox", false }, { "ReaderGradebookNum_Textbox", false } };
+        private Dictionary<string, bool> lmc = new Dictionary<string, bool>() { { "Isbn_Textbox", false }, { "Title_Textbox", false}, { "GradebookNum_Textbox", false }, { "Surname_Textbox", false } };
 
         public BookReaderWindow()
         {
@@ -116,26 +116,66 @@ namespace abis_app
             }
         }*/
 
-        /*private void Search_BookReader_Button_Click(object sender, RoutedEventArgs e)
+        private void Search_BookReader_Button_Click(object sender, RoutedEventArgs e)
         {
             this.BookReader_Table.ItemsSource = null;
 
-            var itemsSource = MainWindow.db.BookReaders.Local.ToBindingList().Select(c => new { c.BookIsbn, c.ReaderGradebookNum, c.DateBorrowed, c.DateReturned, c.DateDeadline, c.Returned});
+            //
+            var itemsSource = BookReaderTools.LoadTable(MainWindow.db);
 
-            if (BookIsbn_Textbox.Text != "")
+            if (Isbn_Textbox.Text != "" && Isbn_Textbox.Text != "ISBN")
             {
-                long bookIsbn = long.Parse(BookIsbn_Textbox.Text);
-                itemsSource = itemsSource.Where(c => c.BookIsbn == bookIsbn);
+                try
+                {
+                    long bookIsbn = long.Parse(Isbn_Textbox.Text);
+                    itemsSource = itemsSource.Where(c => c.Isbn == bookIsbn).ToList();
+                }
+                catch { }
             }
 
-            if (ReaderGradebookNum_Textbox.Text != "")
+            if (Title_Textbox.Text != "" && Title_Textbox.Text != "Название книги")
             {
-                string readerGradebookNum = ReaderGradebookNum_Textbox.Text;
-                itemsSource = itemsSource.Where(c => c.ReaderGradebookNum.ToString() == readerGradebookNum);
+                try
+                {
+                    string title = Title_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.Title == title).ToList();
+                }
+                catch { }
             }
+
+            if (GradebookNum_Textbox.Text != "" && GradebookNum_Textbox.Text != "Номер зачетной книжки")
+            {
+                try
+                {
+                    string gradebookNum = GradebookNum_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.GradebookNum.ToString() == gradebookNum).ToList();
+                }
+                catch { }  
+            }
+
+            if (Surname_Textbox.Text != "" && Surname_Textbox.Text != "Фамилия студента")
+            {
+                try
+                {
+                    string surname = Surname_Textbox.Text;
+                    itemsSource = itemsSource.Where(c => c.Surname.ToString() == surname).ToList();
+                }
+                catch { }
+            }
+
+            if (Returned_Checkbox.IsChecked != null)
+            {
+                try
+                {
+                    bool? returned = Returned_Checkbox.IsChecked;
+                    itemsSource = itemsSource.Where(c => c.Returned == returned).ToList();
+                }
+                catch { }
+            }
+
 
             BookReader_Table.ItemsSource = itemsSource;
-        }*/
+        }
 
         void inputWindowEntered(object sender, EventArgs e)
         {

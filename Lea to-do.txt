@@ -30,5 +30,7 @@ Make a join thing to dispplay surname of the reader and the title of the book in
 Add main functionality to BookHistoryWindow 					DONE
 Add main Functionality to ReaderHistoryWindow 					DONE
 Add login window as the starting window with basic functionality 		UNTESTED 
-Make a table with employee info (?)  	
+Make a table with employee info (?)  		
+Add search functionality to BookReaderWindow  					UNTESTED
 
+disable borrowing a book if a student has debt

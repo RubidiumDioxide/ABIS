@@ -29,11 +29,6 @@ namespace abis_app
             InitializeComponent();
         }
 
-        private void LoginWindow_Deactivated(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Login_Button_Click(object sender, RoutedEventArgs e)
         {
             username = Username_Textbox.Text;
