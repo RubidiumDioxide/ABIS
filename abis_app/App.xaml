@@ -2,7 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:abis_app"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml"
+             ShutdownMode="OnLastWindowClose"
+             >
     <Application.Resources>
         <!-- Сделай какой-нибудь красивый стиль для кнопок -->
 
@@ -15,7 +17,7 @@
             <Setter Property="Control.Width" Value="300"/>
             <Setter Property="Control.Background" Value="AliceBlue"/>
             <Setter Property="Control.Foreground" Value="#FF244265"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
         </Style>
@@ -27,7 +29,7 @@
             <Setter Property="Control.HorizontalAlignment" Value="Center"/>
             <Setter Property="Control.Background" Value="White"/>
             <Setter Property="Control.Foreground" Value="#FF263C7E"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF263C7E"/>
         </Style>
@@ -40,7 +42,7 @@
             <Setter Property="Control.HorizontalAlignment" Value="Center"/>
             <Setter Property="Control.Background" Value="#FFF4D6BD"/>
             <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
         </Style>
@@ -54,7 +56,7 @@
             <Setter Property="Control.FontSize" Value="14"/>
             <Setter Property="Control.Background" Value="White"/>
             <Setter Property="Control.Foreground" Value="#FF263C7E"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="Control.Height" Value="23"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF263C7E"/>
@@ -68,7 +70,7 @@
             <Setter Property="Control.FontSize" Value="14"/>
             <Setter Property="Control.Background" Value="#FFF4D6BD"/>
             <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="Control.Height" Value="23"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>

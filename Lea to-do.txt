@@ -27,6 +27,8 @@ add try-catches to searches							DONE
 make the starting size of all windows the quarter of the screen (or minimized) 	DONE
 Make a join thing to dispplay surname of the reader and the title of the book in the bookreader table 								DONE 
 
-Add main functionality to BookHistoryWindow 
-Add main Functionality to ReaderHistoryWindow 
-Add login window as the starting window and make a table with employee info 
+Add main functionality to BookHistoryWindow 					DONE
+Add main Functionality to ReaderHistoryWindow 					DONE
+Add login window as the starting window with basic functionality 		UNTESTED 
+Make a table with employee info (?)  	
+

@@ -6,8 +6,12 @@ namespace abis;
 
 public partial class AbisContext : DbContext
 {
-    public AbisContext()
+    //string connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;";
+    string connectionString = "";
+
+    public AbisContext(string _connectionString)
     {
+        connectionString = _connectionString;
     }
 
     public AbisContext(DbContextOptions<AbisContext> options)
@@ -26,8 +30,8 @@ public partial class AbisContext : DbContext
     public virtual DbSet<ReaderHistory> ReaderHistories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
+        //=> optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
+        => optionsBuilder.UseSqlServer(connectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
