@@ -11,9 +11,12 @@
     </Window.Background>
     <Grid>
         <StackPanel>
-            <TextBox Name = "Username_Textbox" MaxLength="20" TextWrapping="Wrap"  Width="100" Height="25" Style="{StaticResource InputTextBox_Style}">Имя пользователя</TextBox>
-            <TextBox Name = "Password_Textbox" MaxLength="8" TextWrapping="Wrap"  Width="100" Height="25" Style="{StaticResource InputTextBox_Style}">Пароль</TextBox>
-            <Button Name="Login_Button" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Login_Button_Click">Войти</Button>
+            <TextBlock>Имя пользователя</TextBlock>
+            <TextBox Name = "Username_Textbox" MaxLength="20" TextWrapping="Wrap"  Width="200" Height="25" Style="{StaticResource InputTextBox_Style}"/>
+            <TextBlock>Пароль</TextBlock>
+            <PasswordBox Name = "Password_Passwordbox" MaxLength="8" Width="200" Height="25"/>
+            <Button Name="Login_Button" Width="200" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Login_Button_Click">Войти</Button>
+            <Button Name="Guest_Login_Button" Width="200" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Guest_Login_Button_Click">Войти как гость</Button>
         </StackPanel>
     </Grid>
 </Window>

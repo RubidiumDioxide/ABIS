@@ -24,6 +24,7 @@ namespace abis_app
         public event EventHandler inputEntered;
         public string username;
         public string password;
+        public string mode;
         public LoginWindow()
         {
             InitializeComponent();
@@ -32,10 +33,21 @@ namespace abis_app
         public void Login_Button_Click(object sender, RoutedEventArgs e)
         {
             username = Username_Textbox.Text;
-            password = Password_Textbox.Text;
+            password = Password_Passwordbox.Password;
+            mode = "employee";
 
             inputEntered?.Invoke(this, EventArgs.Empty);
         }
+
+        public void Guest_Login_Button_Click(Object sender, RoutedEventArgs e)
+        {
+            username = "guest";
+            password = "1234";
+            mode = "guest";
+
+            inputEntered?.Invoke(this, EventArgs.Empty);
+        }
+
         protected override void OnClosing(CancelEventArgs e)
         {
             e.Cancel = true;

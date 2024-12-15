@@ -28,6 +28,7 @@ namespace abis_app
         public LoginWindow loginWindow;
         public string connectionString = "";
         private bool isLoginWindowOpened = false;
+        private string mode = "guest"; // guest or employee
 
         public MainWindow()
         {
@@ -53,12 +54,15 @@ namespace abis_app
 
         private void loginWindowEntered(object sender, EventArgs e)
         {
+            mode = loginWindow.mode;
+            
+            //lea
+            this.connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
+            //kat
+            //this.connectionString = "Server=LAPTOP-FAIVFFI6\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
+
             try
             {
-                //lea
-                //this.connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
-                //kat
-                this.connectionString = "Server=LAPTOP-FAIVFFI6\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
                 db = new AbisContext(connectionString);
                 db.Books.Load();
                 db.Readers.Load();
@@ -86,7 +90,7 @@ namespace abis_app
         {
             if (bookWindow == null)
             {
-                bookWindow = new BookWindow();
+                bookWindow = new BookWindow(mode);
                 //bookWindow.Owner = this;
                 
             }
@@ -100,7 +104,7 @@ namespace abis_app
         {
             if(readerWindow == null)
             {
-                readerWindow = new ReaderWindow();
+                readerWindow = new ReaderWindow(mode);
                 //readerWindow.Owner = this;
             }
 
@@ -113,7 +117,7 @@ namespace abis_app
         {
             if (bookReaderWindow == null)
             {
-                bookReaderWindow = new BookReaderWindow();
+                bookReaderWindow = new BookReaderWindow(mode);
                 //bookReaderWindow.Owner = this;
             }
 
@@ -126,7 +130,7 @@ namespace abis_app
         {
             if (reportsWindow == null)
             {
-                reportsWindow = new ReportsWindow();
+                reportsWindow = new ReportsWindow(mode);
                 //reportsWindow.Owner = this;
             }
             

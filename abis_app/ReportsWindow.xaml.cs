@@ -22,10 +22,13 @@ namespace abis_app
     public partial class ReportsWindow : Window
     {
         private string type = "BookHistory";
-        public ReportsWindow()
+        private string mode;
+
+        public ReportsWindow(string mode)
         {
             InitializeComponent();
             ReportsTableRefresh();
+            this.mode = mode;
         }
 
         public void BookHistory_Button_Click(object sender, RoutedEventArgs e)

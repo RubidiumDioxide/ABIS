@@ -26,11 +26,23 @@ namespace abis_app
         private ReaderInputWindow inputWindow;
         private bool isInputWindowOpen = false;
         private Dictionary<string, bool> lmc = new Dictionary<string, bool>() { { "GradebookNum_Textbox", false }, { "Surname_Textbox", false }, { "FirstName_Textbox", false }, { "GroupNum_Textbox", false }, { "Active_Textbox", false }, { "Debt_Textbox", false } };
-        
-        public ReaderWindow()
+        private string mode;
+
+        public ReaderWindow(string mode)
         {
             InitializeComponent();
-            ReaderTableRefresh(); 
+            ReaderTableRefresh();
+            this.mode = mode;
+
+            if(mode == "guest")
+            {
+                Add_Reader_Button.IsEnabled = false;
+                Add_Reader_Button.Visibility = Visibility.Collapsed;
+                Deactivate_Reader_Button.IsEnabled = false;
+                Deactivate_Reader_Button.Visibility = Visibility.Collapsed;
+                Edit_Reader_Button.IsEnabled = false;
+                Edit_Reader_Button.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Add_Reader_Button_Click(object sender, RoutedEventArgs e)
