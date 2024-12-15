@@ -6,10 +6,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <PackageIcon>kai_logo.jpg</PackageIcon>
+    <ApplicationIcon>kai_logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="bg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="kai_logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +30,13 @@
     <Compile Update="ReaderInputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="kai_logo.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

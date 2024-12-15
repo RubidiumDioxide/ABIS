@@ -27,7 +27,7 @@ public partial class Book
 
     public virtual ICollection<BookReader> BookReaders { get; set; } = new List<BookReader>();
 
-    public Book() { } 
+    public Book() { }
 
     public Book(Book book)
     {
@@ -41,5 +41,4 @@ public partial class Book
         Quantity = book.Quantity;
         Active = book.Active;
     }
-    
 }

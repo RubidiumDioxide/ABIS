@@ -133,7 +133,7 @@ namespace abis_app {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/abis_app;component/bookinputwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/abis_app;V1.0.0.0;component/bookinputwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\BookInputWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

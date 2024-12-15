@@ -242,6 +242,13 @@ namespace abis_app
             this.Visibility = Visibility.Hidden;
         }
 
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            BookReaderTableRefresh();
+        }
+
         private void BookReaderTableRefresh()
         {
             this.BookReader_Table.ItemsSource = null;

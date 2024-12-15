@@ -40,6 +40,8 @@ namespace abis_app
             {
                 Add_Book_Button.IsEnabled = false;
                 Add_Book_Button.Visibility = Visibility.Collapsed;
+                Delete_Book_Button.IsEnabled = false;
+                Delete_Book_Button.Visibility = Visibility.Collapsed;
                 Deactivate_Book_Button.IsEnabled = false;
                 Deactivate_Book_Button.Visibility = Visibility.Collapsed;
                 Edit_Book_Button.IsEnabled = false;
@@ -73,9 +75,6 @@ namespace abis_app
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                //reset the datagrid
-                this.BookTableRefresh();
             }
             else
             {
@@ -85,7 +84,7 @@ namespace abis_app
             BookTableRefresh();
         }
 
-        /*private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
+        private void Delete_Book_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Book_Table.SelectedItems.Count > 0)
             {
@@ -101,15 +100,14 @@ namespace abis_app
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                //reset the datagrid
-                this.BookTableRefresh();
             }
             else
             {
                 MessageBox.Show("No cell is selected ");
             }
-        }*/
+
+            this.BookTableRefresh();
+        }
 
         private void Edit_Book_Button_Click(object sender, RoutedEventArgs e)
         {

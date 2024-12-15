@@ -71,18 +71,18 @@ ALTER TABLE [Reader]
 
 ALTER TABLE [Book_Reader]
 	ADD 
-		CONSTRAINT [FK_Reader-Book_Reader] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]),
-		CONSTRAINT [FK_Book-Book_Reader] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]),
+		CONSTRAINT [FK_Reader-Book_Reader] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]) ON DELETE CASCADE,
+		CONSTRAINT [FK_Book-Book_Reader] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]) ON DELETE CASCADE,
 		CONSTRAINT [Dates] CHECK (([DateBorrowed] <= [DateReturned]) and ([DateBorrowed] <= [DateDeadline]))
 
 ALTER TABLE [BookHistory]
 	ADD
-		CONSTRAINT [FK_Book-BookHistory1] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN])
+		CONSTRAINT [FK_Book-BookHistory1] FOREIGN KEY ([BookISBN]) REFERENCES [Book] ([ISBN]) ON DELETE CASCADE 
 		/*CONSTRAINT [IN_BookHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) */
 
 ALTER TABLE [ReaderHistory]
 	ADD
-		CONSTRAINT [FK_Reader-ReaderHistory] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum])
+		CONSTRAINT [FK_Reader-ReaderHistory] FOREIGN KEY ([ReaderGradebookNum]) REFERENCES [Reader] ([GradebookNum]) ON DELETE CASCADE 
 		/*CONSTRAINT [IN_ReaderHistoryAction] CHECK (Action IN ('Добавление', 'Удаление', 'Изменение')) */
 
 CREATE INDEX [Book_Title_Ind] 

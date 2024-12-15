@@ -6,8 +6,7 @@ namespace abis;
 
 public partial class AbisContext : DbContext
 {
-    //string connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;";
-    string connectionString = "";
+    private string connectionString;
 
     public AbisContext(string _connectionString)
     {
@@ -30,7 +29,7 @@ public partial class AbisContext : DbContext
     public virtual DbSet<ReaderHistory> ReaderHistories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //=> optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=abis;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer(connectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -68,7 +67,6 @@ public partial class AbisContext : DbContext
 
             entity.HasOne(d => d.BookIsbnNavigation).WithMany(p => p.BookHistories)
                 .HasForeignKey(d => d.BookIsbn)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Book-BookHistory1");
         });
 
@@ -81,12 +79,10 @@ public partial class AbisContext : DbContext
 
             entity.HasOne(d => d.BookIsbnNavigation).WithMany(p => p.BookReaders)
                 .HasForeignKey(d => d.BookIsbn)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Book-Book_Reader");
 
             entity.HasOne(d => d.ReaderGradebookNumNavigation).WithMany(p => p.BookReaders)
                 .HasForeignKey(d => d.ReaderGradebookNum)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Reader-Book_Reader");
         });
 
@@ -120,7 +116,6 @@ public partial class AbisContext : DbContext
 
             entity.HasOne(d => d.ReaderGradebookNumNavigation).WithMany(p => p.ReaderHistories)
                 .HasForeignKey(d => d.ReaderGradebookNum)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Reader-ReaderHistory");
         });
 

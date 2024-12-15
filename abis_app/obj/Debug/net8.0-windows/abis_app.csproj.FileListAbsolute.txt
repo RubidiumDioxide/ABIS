@@ -490,3 +490,4 @@ C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\Bo
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\BookReaderInputWindow.baml
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\LoginWindow.g.cs
 C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\User\storage\courses\ввип\ABIS\abis_app\obj\Debug\net8.0-windows\abis_app_Content.g.cs

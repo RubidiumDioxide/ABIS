@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,17 +36,28 @@ namespace abis
             ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Добавление" });
         }
         
-
-/*public static void DeleteReader(AbisContext _db, long _gradebookNum)
+        public static void DeleteReader(AbisContext _db, int _gradebookNum)
         {
-            Reader reader = _db.Readers.Where(b => b.GradebookNum == _gradebookNum).FirstOrDefault();
+            Reader reader = _db.Readers.Find(_gradebookNum);
 
             if (reader != null)
             {
                 _db.Readers.Remove(reader);
-                _db.SaveChanges();
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    _db.Readers.Add(reader);
+                    throw new Exception(ex.Message);
+                }
             }
-        }*/
+            else
+            {
+                throw new Exception("Failed to delete a reader: null reference");
+            }
+        }
 
         public static void EditReader(AbisContext _db, int _gradebookNum, List<string> Inputs)
         {
@@ -111,6 +123,28 @@ namespace abis
             }
 
             ReaderHistoryTools.AddReaderHistory(_db, new List<string> { reader.GradebookNum.ToString(), "Деактивирован" });
+        }
+
+        public static void DebtUpdate(AbisContext _db)
+        {
+            _db.BookReaders.Load();
+
+            foreach(Reader r in _db.Readers.ToList())
+            {
+                if (r.Active == true)
+                {
+                    if (_db.BookReaders.Where(c => c.ReaderGradebookNum == r.GradebookNum && c.Returned != true && c.DateDeadline < DateOnly.FromDateTime(DateTime.Today)).ToList().Count() != 0)
+                    {
+                        r.Debt = true;
+                    }
+                    else
+                    {
+                        r.Debt = false; 
+                    }
+                }
+            }
+
+            _db.SaveChanges(); 
         }
     }
 }

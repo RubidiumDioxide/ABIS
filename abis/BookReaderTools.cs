@@ -21,10 +21,21 @@ namespace abis
             };
 
             Book book = db.Books.Find(bookReader.BookIsbn);
+            Reader reader = db.Readers.Find(bookReader.ReaderGradebookNum);
 
             if(book.Quantity <= 0 || book.Active == false)
             {
                 throw new Exception("No such books availible");
+            }
+
+            if (reader.Active == false)
+            {
+                throw new Exception("Reader is inactive"); 
+            }
+
+            if (reader.Debt == true)
+            {
+                throw new Exception("Reader has debt");
             }
 
             db.BookReaders.Add(bookReader);

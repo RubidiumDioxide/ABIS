@@ -92,11 +92,10 @@ namespace abis_app
             {
                 bookWindow = new BookWindow(mode);
                 //bookWindow.Owner = this;
-                
+                bookWindow.LinkEvents();
             }
 
             bookWindow.Show();
-            bookWindow.LinkEvents();
             bookWindow.Focus();
         }
 
@@ -106,10 +105,10 @@ namespace abis_app
             {
                 readerWindow = new ReaderWindow(mode);
                 //readerWindow.Owner = this;
+                readerWindow.LinkEvents();
             }
 
             readerWindow.Show();
-            readerWindow.LinkEvents();
             readerWindow.Focus();
         }
         
@@ -119,10 +118,10 @@ namespace abis_app
             {
                 bookReaderWindow = new BookReaderWindow(mode);
                 //bookReaderWindow.Owner = this;
+                bookReaderWindow.LinkEvents();
             }
 
             bookReaderWindow.Show();
-            bookReaderWindow.LinkEvents();
             bookReaderWindow.Focus();
         }
 

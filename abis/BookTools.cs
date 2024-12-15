@@ -42,9 +42,9 @@ namespace abis
             BookHistoryTools.AddBookHistory(_db, new List<string> { book.Isbn.ToString(), book.Quantity.ToString(), "Добавление" });
         }
 
-        /*public static void DeleteBook(AbisContext _db, long _isbn)
+        public static void DeleteBook(AbisContext _db, long _isbn)
         {
-            Book book = _db.Books.Where(b => b.Isbn == _isbn).FirstOrDefault();
+            Book book = _db.Books.Find(_isbn);
             
             if (book != null)
             {
@@ -53,17 +53,17 @@ namespace abis
                 {
                     _db.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     _db.Books.Add(book);
-                    throw new Exception("Failed to delete a book");
+                    throw new Exception(ex.Message);
                 }
             }
             else
             {
-                throw new Exception("Failed to delete a book");
+                throw new Exception("Failed to delete a book: null reference");
             }
-        }*/
+        }
 
         public static void EditBook(AbisContext _db, long _isbn, List<string> Inputs)
         {

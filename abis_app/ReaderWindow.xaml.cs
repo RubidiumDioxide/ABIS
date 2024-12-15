@@ -38,6 +38,8 @@ namespace abis_app
             {
                 Add_Reader_Button.IsEnabled = false;
                 Add_Reader_Button.Visibility = Visibility.Collapsed;
+                Delete_Reader_Button.IsEnabled = false;
+                Delete_Reader_Button.Visibility = Visibility.Collapsed;
                 Deactivate_Reader_Button.IsEnabled = false;
                 Deactivate_Reader_Button.Visibility = Visibility.Collapsed;
                 Edit_Reader_Button.IsEnabled = false;
@@ -83,7 +85,7 @@ namespace abis_app
             ReaderTableRefresh();
         }
 
-        /*private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
+        private void Delete_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Reader_Table.SelectedItems.Count > 0)
             {
@@ -95,19 +97,18 @@ namespace abis_app
                 {
                     ReaderTools.DeleteReader(MainWindow.db, value.GradebookNum);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to delete a Reader");
+                    MessageBox.Show(ex.Message);
                 }
-
-                //reset the datagrid
-                this.ReaderTableRefresh();
             }
             else
             {
                 MessageBox.Show("No cell is selected ");
             }
-        }*/
+
+            this.ReaderTableRefresh();
+        }
 
         private void Edit_Reader_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -253,6 +254,14 @@ namespace abis_app
         {
             e.Cancel = true;
             this.Visibility = Visibility.Hidden;
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            ReaderTools.DebtUpdate(MainWindow.db);
+            //ReaderTableRefresh();
         }
 
         public void ReaderTableRefresh()

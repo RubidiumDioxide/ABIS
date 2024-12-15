@@ -33,9 +33,10 @@ Add login window as the starting window with basic functionality 		UNTESTED
 Make a table with employee info (?)  		
 Add search functionality to BookReaderWindow  					UNTESTED
 
-add guest mode 									UNTESTED	
-disable borrowing a book if a student has debt 
-add update() function to reader table that automatically sets debt column to true if there is an unreturned book to their name, and releases it, too 
-make isbn of a book editable  
+add guest mode 									UNTESTED
 
-add style for passwordbox
+change the database scheme to allow cascade deletes in the book and reader tables UNTESTED
+add an ability to delete reader and book 					UNTESTED
+disable borrowing a book if a student has debt 					UNTESTED 
+set bookreader to get focus if bookreaderbutton is pressed a second time 	UNTESTED
+add update() function to reader table that automatically sets debt column to true if there is an unreturned book to their name, and releases it, too 			REALLY UNTESTED	
