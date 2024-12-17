@@ -85,6 +85,15 @@
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
         </Style>
+        <Style TargetType="PasswordBox" x:Key="PasswordBox_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.Background" Value="AliceBlue"/>
+            <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
+            <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+        </Style>
 
         <Style TargetType="TextBlock" x:Key="BookReaderTextBlock_Style">
             <Setter Property="Control.FontFamily" Value="Monospace"/>
@@ -96,6 +105,24 @@
             <Setter Property="Control.Foreground" Value="#FF263C7E"/>
             <Setter Property="Control.Margin" Value="10"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="LogTextBlock_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontStyle" Value="Italic"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.Foreground" Value="#FF263C7E"/>
+            <Setter Property="Control.Background" Value="AliceBlue"/>
+            <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+        </Style>
+        
+        <Style TargetType ="CheckBox" x:Key="CheckBox_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
         </Style>
     </Application.Resources>
 </Application>

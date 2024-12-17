@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <None Remove="bg.jpg" />
+    <None Remove="bgg.jpg" />
+    <None Remove="KAI1.jpg" />
+    <None Remove="KAI12.jpg" />
+    <None Remove="KAI20.jpg" />
+    <None Remove="tu144.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +29,11 @@
 
   <ItemGroup>
     <Resource Include="bg.jpg" />
+    <Resource Include="bgg.jpg" />
+    <Resource Include="KAI1.jpg" />
+    <Resource Include="KAI12.jpg" />
+    <Resource Include="KAI20.jpg" />
+    <Resource Include="tu144.jpg" />
   </ItemGroup>
 
   <ItemGroup>

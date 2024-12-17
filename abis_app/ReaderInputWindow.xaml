@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="InputWindow" Height="450" Width="800">
+        Title="InputWindow" Height="340" Width="400" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
             <GradientStop Color="#1C3B5F" Offset="0"/>
@@ -19,8 +19,8 @@
         <TextBox Name="LastName_Textbox" MaxLength="20" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Отчество</TextBox>
         <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Номер группы</TextBox>
         <TextBox Name="DateOfBirth_Textbox" MaxLength="11" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Дата рождения</TextBox>
-        <CheckBox x:Name="Active_Checkbox" Height="20" Content="Active" IsThreeState="False" IsChecked="True"/>
-        <CheckBox x:Name="Debt_Checkbox" Height="20" Content="Задолженность" IsThreeState="False" IsChecked="False"/>
+        <CheckBox x:Name="Active_Checkbox"  Height="20" Content="Active" IsThreeState="False" IsChecked="True" Style="{StaticResource CheckBox_Style}"/>
+        <CheckBox x:Name="Debt_Checkbox"  Height="20" Content="Задолженность" IsThreeState="False" IsChecked="False" Style="{StaticResource CheckBox_Style}"/>
         <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>
     </StackPanel>
 </Window>

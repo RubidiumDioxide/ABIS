@@ -97,4 +97,6 @@ CREATE INDEX [Reader_Surname_Ind]
 CREATE INDEX [Reader_GroupNum_Ind]
 	ON [Reader] ([GroupNum]) 
 
+	select * from book
+
 GO

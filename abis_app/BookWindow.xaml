@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="BookWindow" Height="450" Width="800" Background="#1C3B5F">
+        Title="BookWindow" Height="450" Width="750">
+        <Window.Background>
+        <ImageBrush ImageSource="KAI1.jpg" Stretch="UniformToFill"></ImageBrush>
+        </Window.Background>
 
     <Window.Resources>
     </Window.Resources>
@@ -23,21 +26,21 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
-            <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource BookButton_Style}" Click="Add_Book_Button_Click"/>
-            <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookButton_Style}" Click="Delete_Book_Button_Click"/>
+            <Button x:Name="Add_Book_Button" Content="Добавить" Style="{StaticResource BookReaderButton_Style}" Click="Add_Book_Button_Click"/>
+            <Button x:Name="Delete_Book_Button" Content="Удалить" Style="{StaticResource BookReaderButton_Style}" Click="Delete_Book_Button_Click"/>
             <!--Button x:Name="Decrease_Book_Button" Content="Удалить" Style="{StaticResource BookButton_Style}" Click="Add_Book_Button_Click"/-->
-            <Button x:Name="Deactivate_Book_Button" Content="Снять с учета" Style="{StaticResource BookButton_Style}" Click="Deactivate_Book_Button_Click"/>
-            <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource BookButton_Style}" Click="Edit_Book_Button_Click"/>
+            <Button x:Name="Deactivate_Book_Button" Content="Снять с учета" Style="{StaticResource BookReaderButton_Style}" Click="Deactivate_Book_Button_Click"/>
+            <Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_Book_Button_Click"/>
         </StackPanel>
-        
-        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}" Foreground="#FFF4D6BD">Введите нужные значения параметров и нажмите на кнопку "Поиск". Если поле пустое, поиск по критерию не проводится. </TextBlock>
 
-        <Button x:Name="Search_Book_Button" Content="Поиск" Style="{StaticResource BookButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Book_Button_Click"/>
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}" Foreground="White">Введите нужные значения параметров и нажмите на кнопку "Поиск".<LineBreak/>Если поле пустое, поиск по критерию не проводится. </TextBlock>
+
+        <Button x:Name="Search_Book_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Book_Button_Click"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox Name ="Isbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">ISBN</TextBox>
-            <TextBox Name="Title_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">Название книги</TextBox>
-            <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookTextBox_Style}">Год</TextBox>
-            <CheckBox Name="Active_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}">На учете</CheckBox>
+            <TextBox Name ="Isbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
+            <TextBox Name="Title_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
+            <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Год</TextBox>
+            <CheckBox Name="Active_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}" Style="{StaticResource CheckBox_Style}" Foreground="White">На учете</CheckBox>
         </StackPanel>
 
         <DataGrid Name="Book_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="InputWindow" Height="450" Width="800">
+        Title="InputWindow" Height="340" Width="400" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
             <GradientStop Color="#1A4D7B" Offset="0"/>
@@ -21,7 +21,7 @@
         <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Год</TextBox>
         <TextBox Name="Description_Textbox" MaxLength="500" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Краткое Описание</TextBox>
         <TextBox Name="Quantity_Textbox" MaxLength="2" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Кол-во копий</TextBox>
-        <CheckBox x:Name="Active_Checkbox" Height="20" Content="Active" IsThreeState="False" IsChecked="True"/>
+        <CheckBox x:Name="Active_Checkbox" Height="20" Content="Active" IsThreeState="False" IsChecked="True" Style="{StaticResource CheckBox_Style}"/>
         <Button x:Name="Input_Button" Content="Ввод" Width="100" Height="25" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>
     </StackPanel>
 </Window>

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="BookReaderWindow" Height="450" Width="800" Background="#C5B79A">
+        Title="BookReaderWindow" Height="450" Width="880">
+    <Window.Background>
+        <ImageBrush ImageSource="tu144.jpg" Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
 
     <Window.Resources>
     </Window.Resources>
@@ -29,7 +32,7 @@
             <!--Button x:Name="Edit_Book_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_BookReader_Button_Click"/-->
         </StackPanel>
 
-        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}" >Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}" >Введите нужные значения параметров и нажмите на кнопку "Поиск".<LineBreak/>Если поле пустое, поиск по критерию не проводится."</TextBlock>
 
         <Button x:Name="Search_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_BookReader_Button_Click"/>
 
@@ -38,7 +41,7 @@
             <TextBox Name="Title_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
             <TextBox Name="GradebookNum_Textbox" MaxLength="5" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер зачетной книжки</TextBox>
             <TextBox Name="Surname_Textbox"  MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Фамилия студента</TextBox>
-            <CheckBox Name="Returned_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}">Возвращено</CheckBox>
+            <CheckBox Name="Returned_Checkbox" Height="40" IsThreeState="True" Style="{StaticResource CheckBox_Style}" IsChecked="{x:Null}">Возвращено</CheckBox>
         </StackPanel>
 
         <DataGrid x:Name="BookReader_Table" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>

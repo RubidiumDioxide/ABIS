@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:abis_app"
         mc:Ignorable="d"
-        Title="ReaderWindow" Height="450" Width="800" Background="#D8F1B6">
+        Title="ReaderWindow" Height="450" Width="850">
+    <Window.Background>
+        <ImageBrush ImageSource="KAI12.jpg" Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
 
     <Window.Resources>
     </Window.Resources>
@@ -28,8 +31,8 @@
             <Button x:Name="Deactivate_Reader_Button" Content="Снять с учета" Style="{StaticResource BookReaderButton_Style}" Click="Deactivate_Reader_Button_Click"/>
             <Button x:Name="Edit_Reader_Button" Content="Изменить" Style="{StaticResource BookReaderButton_Style}" Click="Edit_Reader_Button_Click"/>
         </StackPanel>
-       
-        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}">Введите нужные значения параметров и нажмите на кнопку "Поиск"</TextBlock>
+
+        <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource BookReaderTextBlock_Style}">Введите нужные значения параметров и нажмите на кнопку "Поиск".<LineBreak/>Если поле пустое, поиск по критерию не проводится.</TextBlock>
         
         <Button x:Name="Search_Reader_Button" Content="Поиск" Style="{StaticResource BookReaderButton_Style}" Grid.Row="1" Grid.Column="2" Click="Search_Reader_Button_Click"/>
         
@@ -40,8 +43,8 @@
             <TextBox Name="GroupNum_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Номер группы</TextBox>
             <!--TextBox Name="Active_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Действителен</TextBox>
             <TextBox Name="Debt_Textbox" MaxLength="100" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Долг</TextBox-->
-            <CheckBox Name="Active_Checkbox" IsThreeState="True" IsChecked ="{x:Null}">Дествителен</CheckBox>
-            <CheckBox Name="Debt_Checkbox" IsThreeState="True" IsChecked ="{x:Null}">Задолженность</CheckBox>
+            <CheckBox Name="Active_Checkbox" IsThreeState="True" IsChecked ="{x:Null}" Style="{StaticResource CheckBox_Style}">Дествителен</CheckBox>
+            <CheckBox Name="Debt_Checkbox" IsThreeState="True" IsChecked ="{x:Null}" Style="{StaticResource CheckBox_Style}">Задолженность</CheckBox>
 
         </StackPanel>
         
