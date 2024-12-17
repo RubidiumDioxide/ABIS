@@ -3,10 +3,25 @@
   "WorkspaceRootPath": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\reportswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\readerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\readerinputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\kai1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\bookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\bookreaderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\bookreaderinputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
@@ -15,10 +30,13 @@
       "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\bookinputwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\abis_app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACFF4386-C468-4B16-A8F8-46C3C820E2C3}|..\\abis_app\\abis_app.csproj|c:\\users\\teote\\desktop\\jopa\\abis-master\\abis\\abis_app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -31,81 +49,158 @@
       "DocumentGroups": [
         {
           "DockedWidth": 237,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "abis_app.csproj",
               "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\abis_app.csproj",
               "RelativeDocumentMoniker": "..\\abis_app\\abis_app.csproj",
               "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\abis_app.csproj",
               "RelativeToolTip": "..\\abis_app\\abis_app.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-12-17T07:57:49.824Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\App.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\App.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\App.xaml",
+              "RelativeToolTip": "..\\abis_app\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T18:16:15.01Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\abis_app\\LoginWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "..\\abis_app\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T07:58:32.88Z",
+              "Title": "ReportsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReportsWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\ReportsWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReportsWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\ReportsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T18:20:49.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReaderInputWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderInputWindow.xaml",
-              "RelativeDocumentMoniker": "..\\abis_app\\ReaderInputWindow.xaml",
-              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderInputWindow.xaml",
-              "RelativeToolTip": "..\\abis_app\\ReaderInputWindow.xaml",
+              "Title": "ReaderWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\ReaderWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\ReaderWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T07:12:53.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BookReaderInputWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderInputWindow.xaml",
-              "RelativeDocumentMoniker": "..\\abis_app\\BookReaderInputWindow.xaml",
-              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderInputWindow.xaml",
-              "RelativeToolTip": "..\\abis_app\\BookReaderInputWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T07:12:24.648Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BookInputWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookInputWindow.xaml",
-              "RelativeDocumentMoniker": "..\\abis_app\\BookInputWindow.xaml",
-              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookInputWindow.xaml",
-              "RelativeToolTip": "..\\abis_app\\BookInputWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T07:11:53.372Z"
+              "WhenOpened": "2024-12-17T18:20:46.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "KAI1.jpg",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\KAI1.jpg",
+              "RelativeDocumentMoniker": "..\\abis_app\\KAI1.jpg",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\KAI1.jpg",
+              "RelativeToolTip": "..\\abis_app\\KAI1.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-17T18:20:30.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LoginWindow.xaml",
               "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "..\\abis_app\\LoginWindow.xaml",
               "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\LoginWindow.xaml",
               "RelativeToolTip": "..\\abis_app\\LoginWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T07:17:56.626Z"
+              "WhenOpened": "2024-12-17T07:17:56.626Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "BookReaderWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookReaderWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\BookReaderWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T18:18:17.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReaderInputWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderInputWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\ReaderInputWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\ReaderInputWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\ReaderInputWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T07:12:53.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookReaderInputWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderInputWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookReaderInputWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookReaderInputWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\BookReaderInputWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T07:12:24.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\BookWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T18:18:24.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookInputWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookInputWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\BookInputWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\BookInputWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\BookInputWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T07:11:53.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "..\\abis_app\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\MainWindow.xaml",
+              "RelativeToolTip": "..\\abis_app\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-17T18:15:37.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\teote\\Desktop\\jopa\\ABIS-master\\ABIS\\abis_app\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "..\\abis_app\\MainWindow.xaml.cs",
