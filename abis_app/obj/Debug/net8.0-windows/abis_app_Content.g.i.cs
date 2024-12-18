@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kai_logo.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/kai_logo.ico")]
 
 

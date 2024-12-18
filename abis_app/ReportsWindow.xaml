@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ReportsWindow" Height="450" Width="750">
     <Window.Background>
-        <ImageBrush ImageSource="KAI20.jpg" Stretch="UniformToFill"></ImageBrush>
+        <ImageBrush ImageSource="Resources\bg_ReportsWindow.jpg" Stretch="UniformToFill"></ImageBrush>
     </Window.Background>
 
     <Window.Resources>

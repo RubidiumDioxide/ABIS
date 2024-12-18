@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="BookReaderWindow" Height="450" Width="880">
     <Window.Background>
-        <ImageBrush ImageSource="tu144.jpg" Stretch="UniformToFill"></ImageBrush>
+        <ImageBrush ImageSource="Resources\bg_BookReader.jpg" Stretch="UniformToFill"></ImageBrush>
     </Window.Background>
 
     <Window.Resources>

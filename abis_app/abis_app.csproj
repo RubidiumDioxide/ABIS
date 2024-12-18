@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <PackageIcon>kai_logo.jpg</PackageIcon>
-    <ApplicationIcon>kai_logo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\kai_logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="kai_logo.ico" />
+    <Content Include="Resources\kai_logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,12 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="bg.jpg" />
-    <Resource Include="bgg.jpg" />
-    <Resource Include="KAI1.jpg" />
-    <Resource Include="KAI12.jpg" />
-    <Resource Include="KAI20.jpg" />
-    <Resource Include="tu144.jpg" />
+    <Resource Include="Resources\bg.jpg" />
+    <Resource Include="Resources\bgg.jpg" />
+    <Resource Include="Resources\KAI1.jpg" />
+    <Resource Include="Resources\KAI12.jpg" />
+    <Resource Include="Resources\KAI20.jpg" />
+    <Resource Include="Resources\tu144.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="kai_logo.jpg">
+    <None Update="Resources\kai_logo.jpg">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

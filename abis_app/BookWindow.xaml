@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="BookWindow" Height="450" Width="750">
         <Window.Background>
-        <ImageBrush ImageSource="KAI1.jpg" Stretch="UniformToFill"></ImageBrush>
+            <ImageBrush ImageSource="Resources\bg_BookWindow.jpg" Stretch="UniformToFill" Opacity="0.4"></ImageBrush>
         </Window.Background>
 
     <Window.Resources>
