@@ -7,54 +7,54 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="BookReaderInputWindow.xaml.cs">
+    <Compile Update="InputWindows\BookReaderInputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="BookReaderWindow.xaml.cs">
+    <Compile Update="Windows\BookReaderWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="BookWindow.xaml.cs">
+    <Compile Update="Windows\BookWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="BookInputWindow.xaml.cs">
+    <Compile Update="InputWindows\BookInputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoginWindow.xaml.cs">
+    <Compile Update="Windows\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ReaderWindow.xaml.cs">
+    <Compile Update="Windows\ReaderWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ReportsWindow.xaml.cs">
+    <Compile Update="Windows\ReportsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="BookReaderInputWindow.xaml">
+    <Page Update="InputWindows\BookReaderInputWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoginWindow.xaml">
+    <Page Update="Windows\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ReaderInputWindow.xaml">
+    <Page Update="InputWindows\ReaderInputWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="BookReaderWindow.xaml">
+    <Page Update="Windows\BookReaderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="BookWindow.xaml">
+    <Page Update="Windows\BookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="BookInputWindow.xaml">
+    <Page Update="InputWindows\BookInputWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ReaderWindow.xaml">
+    <Page Update="Windows\ReaderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ReportsWindow.xaml">
+    <Page Update="Windows\ReportsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

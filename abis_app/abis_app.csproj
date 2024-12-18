@@ -16,6 +16,10 @@
     <None Remove="KAI1.jpg" />
     <None Remove="KAI12.jpg" />
     <None Remove="KAI20.jpg" />
+    <None Remove="Resources\bg_BookReaderWindow.jpg" />
+    <None Remove="Resources\bg_BookWindow.jpg" />
+    <None Remove="Resources\bg_ReaderWindow.jpg" />
+    <None Remove="Resources\bg_ReportsWindow.jpg" />
     <None Remove="tu144.jpg" />
   </ItemGroup>
 
@@ -30,6 +34,10 @@
   <ItemGroup>
     <Resource Include="Resources\bg.jpg" />
     <Resource Include="Resources\bgg.jpg" />
+    <Resource Include="Resources\bg_BookReaderWindow.jpg" />
+    <Resource Include="Resources\bg_BookWindow.jpg" />
+    <Resource Include="Resources\bg_ReaderWindow.jpg" />
+    <Resource Include="Resources\bg_ReportsWindow.jpg" />
     <Resource Include="Resources\KAI1.jpg" />
     <Resource Include="Resources\KAI12.jpg" />
     <Resource Include="Resources\KAI20.jpg" />
@@ -37,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ReaderInputWindow.xaml.cs">
+    <Compile Update="InputWindows\ReaderInputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

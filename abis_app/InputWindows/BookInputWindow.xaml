@@ -1,0 +1,27 @@
+﻿<Window x:Class="abis_app.BookInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abis_app"
+        mc:Ignorable="d"
+        Title="InputWindow" Height="350" Width="350" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
+            <GradientStop Color="#1A4D7B" Offset="0"/>
+            <GradientStop Color="Aqua" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel>
+        <TextBox Name = "ISBN_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">ISBN</TextBox>
+        <TextBox Name="Title_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Название книги</TextBox>
+        <TextBox Name="Author_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Автор</TextBox>
+        <TextBox Name="Pages_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Кол-во страниц</TextBox>
+        <TextBox Name ="PublishingHouse_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Название издательства</TextBox>
+        <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Год</TextBox>
+        <TextBox Name="Description_Textbox" MaxLength="500" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Краткое Описание</TextBox>
+        <TextBox Name="Quantity_Textbox" MaxLength="2" TextWrapping="Wrap" Style="{StaticResource InputTextBox_Style}">Кол-во копий</TextBox>
+        <CheckBox x:Name="Active_Checkbox" Content="Active" IsThreeState="False" IsChecked="True" Style="{StaticResource CheckBox_Style}"/>
+        <Button x:Name="Input_Button" Content="Ввод" Style="{StaticResource MainWindowButton_Style}" Click="Input_Button_Click"/>
+    </StackPanel>
+</Window>
