@@ -40,7 +40,7 @@
             <TextBox Name ="Isbn_Textbox" MaxLength="13" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">ISBN</TextBox>
             <TextBox Name="Title_Textbox" MaxLength="200" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Название книги</TextBox>
             <TextBox Name="YearPublished_Textbox" MaxLength="4" TextWrapping="Wrap" Style="{StaticResource BookReaderTextBox_Style}">Год</TextBox>
-            <CheckBox Name="Active_Checkbox" Height="40" IsThreeState="True" IsChecked="{x:Null}" Style="{StaticResource CheckBox_Style}" Foreground="White">На учете</CheckBox>
+            <CheckBox Name="Active_Checkbox" Height="23" IsThreeState="True" IsChecked="{x:Null}" Style="{StaticResource CheckBox_Style}" Foreground="White" >На учете</CheckBox>
         </StackPanel>
 
         <DataGrid Name="Book_Table" AutoGenerateColumns="True" SelectionMode="Single" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
